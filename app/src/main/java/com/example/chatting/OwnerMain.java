@@ -16,7 +16,6 @@ public class OwnerMain extends AppCompatActivity {
     public void MilkmanList(View v)
     {
         Intent intent=new Intent(this,MilkManList2.class);
-        intent.putExtra("val","Owner");
         startActivity(intent);
     }
     public void orederHistory(View v)

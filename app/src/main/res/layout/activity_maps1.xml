@@ -20,13 +20,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:textColor="@color/black"
         android:id="@+id/distance"
         ></TextView>
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="230dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="370dp"
+       android:layout_above="@id/confirm"
         android:id="@+id/messageBox"
         android:background="@color/grey"
         android:layout_marginBottom="10dp"

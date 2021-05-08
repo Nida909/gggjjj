@@ -5,7 +5,7 @@
     <string name="language">اپنی پسند کی زبان منتخب کریں</string>
     <string name="heading">مکمل غذا</string>
     <string name="question">سلام! اپ کون ہیں؟</string>
-    <string name="milkman">دودھ والا</string>
+    <string name="milkman">دودھ فروش</string>
     <string name="customer">گاهک</string>
     <string name="login">لاگ ان کریں</string>
     <string name="name">صارف کا نام</string>
@@ -26,4 +26,51 @@
     <string name="password1">اپنا پاس ورڈ درج کریں</string>
     <string name="number">اپنا رابطہ نمبر درج کریں</string>
     <string name="savedetails"> تفصیلات محفوظ کریں</string>
+
+    <string name="heading1"> دودھ کی تفصیلات</string>
+
+
+    <string name="quantity"> دودھ کی مقدار درج کریں</string>
+    <string name="price"> دودھ کی قیمت درج کریں</string>
+
+    <string name="cat"> دودھ کی قسم</string>
+
+    <string name="cowmilk">گائے کا دودھ</string>
+    <string name="goatmilk"> بکری کا دودھ</string>
+    <string name="baffalomillk"> بھینس کا دودھ</string>
+
+    <string name="SearchOrders"> آرڈر دیکھیں</string>
+    <string name="OtherMilkMans"> دوسرے دودھ بیچنے والے دیکھیں</string>
+    <string name="Reviews"> لوگوں کے جائزے</string>
+
+    <string name="NoOrder"> ابھی آپ کا کوئی گاہک نہیں ہے</string>
+    <string name="customers"> آپ کے گاہک</string>
+
+    <string name="milkmans1">  دودھ بیچنے والوں کی فہرست </string>
+    <string name="nomilkmans1">   اس ایپ پر ابھی کوئی دودھ فروش نہیں ہے </string>
+
+    <string name="reviews"> جائزے </string>
+
+    <string name="ordershistory">آرڈرز کی ہسٹری </string>
+    <string name="chatwithothers"> دوسروں کے ساتھ چیٹ کریں </string>
+
+    <string name="ListOfMilkMans"> دودھ بیچنے والوں کی فہرست </string>
+    <string name="searchbylocation">جگہ کے لحاظ سے تلاش کریں </string>
+
+    <string name="milkmandetail">دودھ فروش کی تفصیلات </string>
+    <string name="named">دودھ فروش کا نام </string>
+    <string name="locationd">جگہ </string>
+    <string name="numberd">رابطہ نمبر</string>
+    <string name="quantityd">دودھ کی مقدار</string>
+    <string name="qualityd">دودھ کی قسم</string>
+    <string name="priced"> دودھ کی قیمت / کلوگرام </string>
+
+    <string name="placeorder"> اپنا آرڈر درج کریں</string>
+    <string name="givereview"> جائزہ دیں </string>
+
+    <string name="typereview">   اپنا جائزہ ٹائپ کریں </string>
+
+
+
+
 </resources>

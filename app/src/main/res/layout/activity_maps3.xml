@@ -18,7 +18,7 @@
     android:layout_alignParentRight="true"
     android:layout_alignParentTop="true"
     android:id="@+id/img"
-    android:src="@drawable/mm"
+    android:src="@drawable/history"
 android:onClick="Showmenu"
     ></ImageButton>
     <RelativeLayout
@@ -131,7 +131,7 @@ android:onClick="Showmenu"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:text="Pay"
-        android:background="@drawable/button_bg_rounded_corners"
+        android:background="@drawable/abc"
         android:textColor="@color/white"
         android:layout_centerInParent="true"
         android:textSize="22dp"

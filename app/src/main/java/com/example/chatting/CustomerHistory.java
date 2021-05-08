@@ -59,7 +59,7 @@ public class CustomerHistory extends AppCompatActivity {
                  String str=h1.child("CustomerContact").getValue().toString();
 
 if(str.equals(num)) {
-    history1 mObj = new history1(" " + h1.child("CustomerContact").getValue(), " " + h1.child("MilkmanLoc").getValue(), " " + h1.child("Price").getValue(), " " + h1.child("DropOffLoc").getValue());
+    history1 mObj = new history1("" + h1.child("CustomerContact").getValue(), "" + h1.child("MilkmanLoc").getValue(), "" + h1.child("Price").getValue(), "" + h1.child("DropOffLoc").getValue());
     no = Integer.parseInt(h1.child("ID").getValue().toString());
     mObj.setCount(no);
     customer.add(mObj);

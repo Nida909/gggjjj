@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MilkApp</string>
+    <string name="app_name">Chatting</string>
     <string name="selectedlanguage">English</string>
     <string name="language">Select Language of Your Own Choice</string>
     <string name="heading">THE COMPLETE FOOD</string>
@@ -25,6 +25,51 @@
     <string name="password1">enter your password</string>
     <string name="number">  enter your contact number</string>
     <string name="savedetails"> Save Details</string>
+
+    <string name="heading1"> Milk Details</string>
+
+
+    <string name="price"> Enter Milk Price</string>
+    <string name="quantity"> Enter Milk Quantity</string>
+
+    <string name="cat"> Milk Category</string>
+
+    <string name="cowmilk">Cow Milk</string>
+    <string name="goatmilk"> Goat Milk</string>
+    <string name="baffalomillk"> Baffalo Milk</string>
+
+    <string name="SearchOrders"> Search Orders</string>
+    <string name="OtherMilkMans"> Other Milk Mans</string>
+    <string name="Reviews"> Reviews</string>
+
+    <string name="NoOrder"> You have No Customer At The Movement</string>
+    <string name="customers">  Here Are Your Customers</string>
+
+    <string name="milkmans1">   Lists Of Milk Mans </string>
+    <string name="nomilkmans1">   There is no Milk Man At The Movement </string>
+
+    <string name="reviews"> Reviews </string>
+
+    <string name="ordershistory"> Orders History </string>
+    <string name="chatwithothers"> Chat With Others </string>
+
+    <string name="ListOfMilkMans">List Of Milk Mans </string>
+    <string name="searchbylocation">Search By Location </string>
+
+
+    <string name="milkmandetail">MILK MAN DETAILS </string>
+    <string name="named">Milk Man Name </string>
+    <string name="locationd">Location </string>
+    <string name="numberd">Contact Number</string>
+    <string name="quantityd">Milk Quantity </string>
+    <string name="qualityd">Milk Type</string>
+    <string name="priced"> Milk Price/Kg </string>
+
+    <string name="placeorder"> Place Order </string>
+    <string name="givereview"> Give Review </string>
+    <string name="typereview"> Type Your Review </string>
+
+
 
 
 </resources>

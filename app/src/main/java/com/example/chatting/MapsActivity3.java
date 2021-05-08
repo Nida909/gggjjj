@@ -19,12 +19,15 @@ import android.location.Geocoder;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -80,6 +83,7 @@ public class MapsActivity3 extends FragmentActivity implements OnMapReadyCallbac
     double p1,p2,pp;
     double dis;
     double total,total1;
+    ImageButton btn;
     ArrayList<RiderClass> array=new ArrayList<RiderClass>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,11 +95,14 @@ public class MapsActivity3 extends FragmentActivity implements OnMapReadyCallbac
         milkmanId = intent.getStringExtra("milkmanId");
         cId = intent.getStringExtra("customerId");
         Count=intent.getStringExtra("Count");
+
         Toast.makeText(MapsActivity3.this, pickup + dropoff, Toast.LENGTH_SHORT).show();
        // setHasOptionsMenu(true);
         succes = (Button) findViewById(R.id.succesfull);
         cancel = (Button) findViewById(R.id.cancel);
         pay=(Button) findViewById(R.id.pay);
+        btn=(ImageButton) findViewById(R.id.img);
+        registerForContextMenu(btn);
         distn=(TextView)findViewById(R.id.distance);
         activity=this;
         //Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
@@ -240,14 +247,14 @@ public class MapsActivity3 extends FragmentActivity implements OnMapReadyCallbac
         });
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-       // super.onCreateOptionsMenu(menu);
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.main1, menu);
-        super.onCreateOptionsMenu(menu);
-        return true;
+        //super.onCreateOptionsMenu(menu);
+        //return true;
     }
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onContextItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.Ordersh:
@@ -266,9 +273,7 @@ public class MapsActivity3 extends FragmentActivity implements OnMapReadyCallbac
                 startActivity(inten);
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
-
-
+                return false;
         }
     }
     public void onMapReady(GoogleMap googleMap) {
@@ -452,7 +457,7 @@ i.putExtra("Price",price);
                 p1=Double.parseDouble(price);
                 p2=p1-pp;
                 String[] wherearg={milkmanId};
-
+/*
                 String[] columns = { DatabaseContract.MilkMan.COL_TOTAL_PRICE};
                 Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, columns, DatabaseContract.MilkMan._ID + "=?", wherearg
                         , null, null, null, null);
@@ -468,9 +473,11 @@ i.putExtra("Price",price);
                 if (count > 0) {
                     Toast.makeText(this, count+"  Records updated: " , Toast.LENGTH_SHORT).show();
                 }
+
+ */
                 String[] wherearg2={RiderId};
                 String[] column = { DatabaseContract.Riders.COL_TOTAL_PRICE};
-                Cursor cr = db.query(DatabaseContract.Riders.TABLE_NAME, column, DatabaseContract.Riders._ID + "=?", wherearg2
+              /*  Cursor cr = db.query(DatabaseContract.Riders.TABLE_NAME, column, DatabaseContract.Riders._ID + "=?", wherearg2
                         , null, null, null, null);
                 if (cr.getCount() > 0) {
                     cr.moveToFirst();
@@ -492,7 +499,7 @@ i.putExtra("Price",price);
                     Toast.makeText(this, cont+"  Records updated: " , Toast.LENGTH_SHORT).show();
                 }
                 db.close();
-
+*/
                 ref.child("Orderlocation").child(Count).child("Cancel").setValue("Successfull");
                 Intent intn=new Intent(MapsActivity3.this,MilkManList.class);
                 startActivity(intn);
