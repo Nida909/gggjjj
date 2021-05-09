@@ -72,8 +72,8 @@
 
     <string name="verify"> اپنے فون نمبر کی تصدیق کریں </string>
     <string name="otp"> ایپ آپ کے فون نمبر کی تصدیق کے  کے لئے ایک SMS پیغام بھیجے گی</string>
-    <string name="phonebox"> اپنا فون نمبر ٹائپ کریں </string>
-    <string name="continuebtn"> آگے بڑھیں </string>
+    <string name="phone1"> اپنا فون نمبر ٹائپ کریں </string>
+    <string name="continue1"> آگے بڑھیں </string>
 
 
 

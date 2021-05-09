@@ -54,8 +54,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
             getSupportActionBar().hide();
             verify.setText(resources.getString(R.string.verify));
             id1.setText(resources.getString(R.string.otp));
-            phoneBox.setHint(resources.getString(R.string.phonebox));
-            continueBtn.setText(resources.getString(R.string.continuebtn));
+            phoneBox.setHint(resources.getString(R.string.phone1));
+            continueBtn.setText(resources.getString(R.string.continue1));
             str1="اردو";
 
 
@@ -76,8 +76,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
             getSupportActionBar().hide();
             verify.setText(resources.getString(R.string.verify));
             id1.setText(resources.getString(R.string.otp));
-            phoneBox.setHint(resources.getString(R.string.phonebox));
-            continueBtn.setText(resources.getString(R.string.continuebtn));
+            phoneBox.setHint(resources.getString(R.string.phone1));
+            continueBtn.setText(resources.getString(R.string.continue1));
             str1="ENGLISH";
 
         }
