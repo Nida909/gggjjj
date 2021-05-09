@@ -26,7 +26,7 @@ public class MilkManList2 extends AppCompatActivity {
     DatabaseHelper dbh;
     SQLiteDatabase db;
     Activity activity;
-    String str,s1,s2,s3, s4,vall;
+    String str,s1,s2,s3, s4;
     private ProgressDialog progressDialog;
     TextView tv;
     MenuItem chatwithothers, ordershistory;
@@ -82,7 +82,6 @@ public class MilkManList2 extends AppCompatActivity {
                     s2 = c.getString(2);
                     s4 = c.getString(3);
                     s3 = String.valueOf(id);
-                    vall=String.valueOf(id);
                     MilkMan mObj = new MilkMan(s1, "Category : " + s4 + ", Loc : " + s2, s3);
                     arrayList.add(mObj);
 
@@ -214,10 +213,6 @@ public class MilkManList2 extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.Review:
-                Intent inte=new Intent(this,showReview.class);
-                inte.putExtra("val",vall);
-                startActivity(inte);
             case R.id.Ordersh:
                 Toast.makeText(getApplicationContext(),"Record id"+str,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, CustomerHistory.class);
@@ -233,7 +228,6 @@ public class MilkManList2 extends AppCompatActivity {
                 inten.putExtra("language",str1);
                 startActivity(inten);
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
 
