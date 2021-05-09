@@ -21,7 +21,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
     String str,str1;
     FirebaseAuth auth;
     String languages;
-    TextView verify,id1;
+    TextView verifynum,id11;
     Context context;
     Resources resources;
 
@@ -30,8 +30,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
-        verify=findViewById(R.id.verify);
-        id1=findViewById(R.id.id1);
+        verifynum=findViewById(R.id.verify);
+        id11=findViewById(R.id.id1);
         phoneBox=findViewById(R.id.phoneBox);
         continueBtn=findViewById(R.id.continueBtn);
 
@@ -52,8 +52,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verify.setText(resources.getString(R.string.verify));
-            id1.setText(resources.getString(R.string.otp));
+            verifynum.setText(resources.getString(R.string.verify));
+            id11.setText(resources.getString(R.string.otp));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
             str1="اردو";
@@ -74,8 +74,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verify.setText(resources.getString(R.string.verify));
-            id1.setText(resources.getString(R.string.otp));
+            verifynum.setText(resources.getString(R.string.verify));
+            id11.setText(resources.getString(R.string.otp));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
             str1="ENGLISH";
