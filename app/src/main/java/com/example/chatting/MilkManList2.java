@@ -29,7 +29,7 @@ public class MilkManList2 extends AppCompatActivity {
     String str,s1,s2,s3, s4;
     private ProgressDialog progressDialog;
     TextView tv;
-    MenuItem chatwithothers, ordershistory;
+    MenuItem chatwithothers; //ordershistory
 
     Context context;
     Resources resources;
@@ -179,14 +179,14 @@ public class MilkManList2 extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main1, menu);
 
         chatwithothers = menu.findItem(R.id.Chat);
-
+       // ordershistory= menu.findItem(R.id.Ordersh);
         if(languages.equals("ENGLISH"))
         {
 
             context = LocalHelper.setLocale(MilkManList2.this, "en");
             resources = context.getResources();
             chatwithothers.setTitle(resources.getString(R.string.chatwithothers));
-            ordershistory.setTitle(resources.getString(R.string.ordershistory));
+            //ordershistory.setTitle(resources.getString(R.string.ordershistory));
             str1="ENGLISH";
 
         }
@@ -197,7 +197,7 @@ public class MilkManList2 extends AppCompatActivity {
             context = LocalHelper.setLocale(MilkManList2.this, "an");
             resources = context.getResources();
             chatwithothers.setTitle(resources.getString(R.string.chatwithothers));
-            ordershistory.setTitle(resources.getString(R.string.ordershistory));
+          //  ordershistory.setTitle(resources.getString(R.string.ordershistory));
             str1="اردو";
 
         }
