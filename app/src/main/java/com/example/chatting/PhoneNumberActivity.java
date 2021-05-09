@@ -31,16 +31,15 @@ public class PhoneNumberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         verify=findViewById(R.id.verify);
         id1=findViewById(R.id.id1);
+        phoneBox=findViewById(R.id.phoneBox);
+        continueBtn=findViewById(R.id.continueBtn);
         Intent inten=getIntent();
         languages = inten.getExtras().getString("language");
         if(languages.equals("اردو")) {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
             resources = context.getResources();
-            //verify.setText(resources.getString(R.string.verify));
-            id1.setText(resources.getString(R.string.otp));
-            phoneBox.setText(resources.getString(R.string.phonebox));
-            continueBtn.setText(resources.getString(R.string.continuebtn));
+
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
             binding.phoneBox.requestFocus();
@@ -48,6 +47,10 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
+            verify.setText(resources.getString(R.string.verify));
+            id1.setText(resources.getString(R.string.otp));
+            phoneBox.setHint(resources.getString(R.string.phonebox));
+            continueBtn.setText(resources.getString(R.string.continuebtn));
             str1="اردو";
 
 
@@ -56,10 +59,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
             resources = context.getResources();
-           // verify.setText(resources.getString(R.string.verify));
-            id1.setText(resources.getString(R.string.otp));
-            phoneBox.setText(resources.getString(R.string.phonebox));
-            continueBtn.setText(resources.getString(R.string.continuebtn));
+
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
             binding.phoneBox.requestFocus();
@@ -67,6 +67,10 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
+            verify.setText(resources.getString(R.string.verify));
+            id1.setText(resources.getString(R.string.otp));
+            phoneBox.setHint(resources.getString(R.string.phonebox));
+            continueBtn.setText(resources.getString(R.string.continuebtn));
             str1="ENGLISH";
 
         }
