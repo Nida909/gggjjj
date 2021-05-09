@@ -18,7 +18,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
     ActivityPhoneNumberBinding binding;
     Button continueBtn;
     EditText phoneBox;
-    TextView verify,id11;
+    TextView num,id11;
     String str,str1;
     FirebaseAuth auth;
     String languages;
@@ -31,7 +31,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
-        verify =findViewById(R.id.verify);
+        num =findViewById(R.id.verify);
         id11=findViewById(R.id.id1);
         phoneBox=findViewById(R.id.phoneBox);
         continueBtn=findViewById(R.id.continueBtn);
@@ -44,8 +44,6 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
             resources = context.getResources();
-
-
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
             binding.phoneBox.requestFocus();
@@ -53,7 +51,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verify.setText(resources.getString(R.string.verify1));
+            num.setText(resources.getString(R.string.verify1));
             id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
@@ -66,8 +64,6 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
             resources = context.getResources();
-
-
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
             binding.phoneBox.requestFocus();
@@ -75,7 +71,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verify.setText(resources.getString(R.string.verify1));
+            num.setText(resources.getString(R.string.verify1));
             id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));

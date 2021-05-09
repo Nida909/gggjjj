@@ -19,21 +19,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Verify Your Phone Number"
+        android:id="@+id/verify"
         android:textStyle="bold"
         android:textSize="20dp"
         android:layout_gravity="center"
         android:textColor="@android:color/black"
-        android:id="@+id/verify"
+
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="App will send an SMS message to verify your phone number"
+        android:id="@+id/id1"
         android:textStyle="bold"
         android:textSize="13dp"
         android:layout_gravity="center"
-        android:id="@+id/id1"
+
         />
 
     <EditText
