@@ -70,8 +70,8 @@
 
     <string name="typereview">   اپنا جائزہ ٹائپ کریں </string>
 
-    <string name="verify"> اپنے فون نمبر کی تصدیق کریں </string>
-    <string name="otp"> ایپ آپ کے فون نمبر کی تصدیق کے  کے لئے ایک SMS پیغام بھیجے گی</string>
+    <string name="verify1"> اپنے فون نمبر کی تصدیق کریں </string>
+    <string name="otp1"> ایپ آپ کے فون نمبر کی تصدیق کے  کے لئے ایک SMS پیغام بھیجے گی</string>
     <string name="phone1"> اپنا فون نمبر ٹائپ کریں </string>
     <string name="continue1"> آگے بڑھیں </string>
 

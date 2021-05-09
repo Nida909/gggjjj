@@ -52,8 +52,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verifynum.setText(resources.getString(R.string.verify));
-            id11.setText(resources.getString(R.string.otp));
+            verifynum.setText(resources.getString(R.string.verify1));
+            id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
             str1="اردو";
@@ -74,8 +74,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verifynum.setText(resources.getString(R.string.verify));
-            id11.setText(resources.getString(R.string.otp));
+            verifynum.setText(resources.getString(R.string.verify1));
+            id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
             str1="ENGLISH";
