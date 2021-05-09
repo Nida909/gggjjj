@@ -165,7 +165,7 @@ if(check.equals("MilkMan"))
                 Toast.makeText(this, "New Record Inserted: " + newRowId, Toast.LENGTH_LONG).show();
             }
             db.close();
-            Intent intent = new Intent(this, AddMilkInfo.class);
+            Intent intent = new Intent(CreateMAccount.this, AddMilkInfo.class);
             intent.putExtra("val1", Email);
             startActivity(intent);
 }else if(check.equals("Customer"))
@@ -190,7 +190,7 @@ if(check.equals("MilkMan"))
 
         db.close();
 
-        Intent intent = new Intent(this, MilkManList.class);
+        Intent intent = new Intent(CreateMAccount.this, MilkManList.class);
         intent.putExtra("val", vall);
         startActivity(intent);
     }
