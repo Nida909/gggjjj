@@ -179,7 +179,7 @@ public class MilkManList2 extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main1, menu);
 
         chatwithothers = menu.findItem(R.id.Chat);
-        ordershistory= menu.findItem(R.id.Ordersh);
+
         if(languages.equals("ENGLISH"))
         {
 
