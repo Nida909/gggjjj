@@ -278,7 +278,7 @@ ImageButton img;
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main1, menu);
         chatwithothers = menu.findItem(R.id.Chat);
-        ordershistory= menu.findItem(R.id.Ordersh);
+        //ordershistory= menu.findItem(R.id.Ordersh);
         if(languages.equals("ENGLISH"))
         {
 
@@ -310,14 +310,14 @@ ImageButton img;
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.Ordersh:
+           /* case R.id.Ordersh:
                 Toast.makeText(getApplicationContext(),"Record id"+str,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MilkManList.this, CustomerHistory.class);
                 intent.putExtra("language",lang);
                 intent.putExtra("var", str);
 
                 startActivity(intent);
-                return true;
+                return true;*/
             case R.id.Chat:
 
                 Intent inten = new Intent(this, PhoneNumberActivity.class);

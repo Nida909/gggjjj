@@ -257,7 +257,7 @@ public class MapsActivity3 extends FragmentActivity implements OnMapReadyCallbac
     public boolean onContextItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.Ordersh:
+            /*case R.id.Ordersh:
                 Toast.makeText(getApplicationContext(),"Record id"+ Id,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, CustomerHistory.class);
                 intent.putExtra("var",   Id);
@@ -265,7 +265,7 @@ public class MapsActivity3 extends FragmentActivity implements OnMapReadyCallbac
                 intent.putExtra("milkmanId",milkmanId);
                 startActivity(intent);
                 finish();
-                return true;
+                return true;*/
             case R.id.Chat:
 
                 Intent inten = new Intent(this, PhoneNumberActivity.class);
