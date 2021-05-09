@@ -285,7 +285,7 @@ ImageButton img;
             context = LocalHelper.setLocale(MilkManList.this, "en");
             resources = context.getResources();
             chatwithothers.setTitle(resources.getString(R.string.chatwithothers));
-            ordershistory.setTitle(resources.getString(R.string.ordershistory));
+            //ordershistory.setTitle(resources.getString(R.string.ordershistory));
 
 
         }
@@ -296,7 +296,7 @@ ImageButton img;
             context = LocalHelper.setLocale(MilkManList.this, "an");
             resources = context.getResources();
             chatwithothers.setTitle(resources.getString(R.string.chatwithothers));
-            ordershistory.setTitle(resources.getString(R.string.ordershistory));
+            //ordershistory.setTitle(resources.getString(R.string.ordershistory));
 
 
         }
