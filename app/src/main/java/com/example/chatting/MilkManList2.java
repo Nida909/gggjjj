@@ -213,14 +213,14 @@ public class MilkManList2 extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.Ordersh:
+           /* case R.id.Ordersh:
                 Toast.makeText(getApplicationContext(),"Record id"+str,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, CustomerHistory.class);
                 intent.putExtra("language",str1);
                 intent.putExtra("var", str);
 
                 startActivity(intent);
-                return true;
+                return true;*/
             case R.id.Chat:
 
                 Intent inten = new Intent(this, PhoneNumberActivity.class);
