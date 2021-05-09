@@ -177,7 +177,7 @@ public class MilkManList2 extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.main3, menu);
+        getMenuInflater().inflate(R.menu.main1, menu);
 
         chatwithothers = menu.findItem(R.id.Chat);
         ordershistory= menu.findItem(R.id.Ordersh);
@@ -218,6 +218,21 @@ public class MilkManList2 extends AppCompatActivity {
                 Intent inte=new Intent(this,showReview.class);
                 inte.putExtra("val",vall);
                 startActivity(inte);
+            case R.id.Ordersh:
+                Toast.makeText(getApplicationContext(),"Record id"+str,Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, CustomerHistory.class);
+                intent.putExtra("language",str1);
+                intent.putExtra("var", str);
+
+                startActivity(intent);
+                return true;
+            case R.id.Chat:
+
+                Intent inten = new Intent(this, PhoneNumberActivity.class);
+                //inten.putExtra("var", str);
+                inten.putExtra("language",str1);
+                startActivity(inten);
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
