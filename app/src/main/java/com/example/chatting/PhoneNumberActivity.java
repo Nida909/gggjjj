@@ -29,18 +29,21 @@ public class PhoneNumberActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_phone_number);
+        verify=findViewById(R.id.verify);
+        id1=findViewById(R.id.id1);
+        phoneBox=findViewById(R.id.phoneBox);
+        continueBtn=findViewById(R.id.continueBtn);
 
         Intent inten=getIntent();
         languages = inten.getExtras().getString("language");
+
         if(languages.equals("اردو")) {
 
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
             resources = context.getResources();
-            verify=findViewById(R.id.verify);
-            id1=findViewById(R.id.id1);
-            phoneBox=findViewById(R.id.phoneBox);
-            continueBtn=findViewById(R.id.continueBtn);
+
 
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
@@ -62,10 +65,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
             resources = context.getResources();
-            verify=findViewById(R.id.verify);
-            id1=findViewById(R.id.id1);
-            phoneBox=findViewById(R.id.phoneBox);
-            continueBtn=findViewById(R.id.continueBtn);
+
 
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
