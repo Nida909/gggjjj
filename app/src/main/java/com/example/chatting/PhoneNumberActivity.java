@@ -33,13 +33,14 @@ public class PhoneNumberActivity extends AppCompatActivity {
         Intent inten=getIntent();
         languages = inten.getExtras().getString("language");
         if(languages.equals("اردو")) {
+
+
+            context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
+            resources = context.getResources();
             verify=findViewById(R.id.verify);
             id1=findViewById(R.id.id1);
             phoneBox=findViewById(R.id.phoneBox);
             continueBtn=findViewById(R.id.continueBtn);
-
-            context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
-            resources = context.getResources();
 
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
@@ -57,13 +58,14 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
         }
         if(languages.equals("ENGLISH")) {
+
+
+            context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
+            resources = context.getResources();
             verify=findViewById(R.id.verify);
             id1=findViewById(R.id.id1);
             phoneBox=findViewById(R.id.phoneBox);
             continueBtn=findViewById(R.id.continueBtn);
-
-            context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
-            resources = context.getResources();
 
             binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
