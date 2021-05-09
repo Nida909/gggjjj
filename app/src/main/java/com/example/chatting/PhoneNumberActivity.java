@@ -32,9 +32,9 @@ public class PhoneNumberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
+t1=findViewById(R.id.first);
+t2=findViewById(R.id.second);
 
-        phoneBox=findViewById(R.id.phoneBox);
-        continueBtn=findViewById(R.id.continueBtn);
 
 
         Intent inten=getIntent();
@@ -50,11 +50,15 @@ public class PhoneNumberActivity extends AppCompatActivity {
             binding.phoneBox.requestFocus();
             continueBtn = findViewById(R.id.continueBtn);
             phoneBox = findViewById(R.id.phoneBox);
+            t1=findViewById(R.id.first);
+            t2=findViewById(R.id.second);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
 
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
+            t1.setText(resources.getString(R.string.verify1));
+            t2.setText(resources.getString(R.string.otp1));
             str1="اردو";
 
 
@@ -69,10 +73,15 @@ public class PhoneNumberActivity extends AppCompatActivity {
             binding.phoneBox.requestFocus();
             continueBtn = findViewById(R.id.continueBtn);
             phoneBox = findViewById(R.id.phoneBox);
+            t1=findViewById(R.id.first);
+            t2=findViewById(R.id.second);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
+            t1.setText(resources.getString(R.string.verify1));
+            t2.setText(resources.getString(R.string.otp1));
+
             str1="ENGLISH";
 
         }
