@@ -167,6 +167,7 @@ if(check.equals("MilkMan"))
             db.close();
             Intent intent = new Intent(CreateMAccount.this, AddMilkInfo.class);
             intent.putExtra("val1", Email);
+
             startActivity(intent);
 }else if(check.equals("Customer"))
 {
@@ -192,6 +193,7 @@ if(check.equals("MilkMan"))
 
         Intent intent = new Intent(CreateMAccount.this, MilkManList.class);
         intent.putExtra("val", vall);
+        intent.putExtra("language", str);
         startActivity(intent);
     }
 }else
