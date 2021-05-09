@@ -37,7 +37,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
             resources = context.getResources();
-            verify.setText(resources.getString(R.string.verify));
+            //verify.setText(resources.getString(R.string.verify));
             id1.setText(resources.getString(R.string.otp));
             phoneBox.setText(resources.getString(R.string.phonebox));
             continueBtn.setText(resources.getString(R.string.continuebtn));
@@ -56,7 +56,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
             resources = context.getResources();
-            verify.setText(resources.getString(R.string.verify));
+           // verify.setText(resources.getString(R.string.verify));
             id1.setText(resources.getString(R.string.otp));
             phoneBox.setText(resources.getString(R.string.phonebox));
             continueBtn.setText(resources.getString(R.string.continuebtn));
