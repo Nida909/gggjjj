@@ -35,8 +35,8 @@ public class showReview extends AppCompatActivity {
         setContentView(R.layout.activity_show_review);
         text=findViewById(R.id.txt);
         Intent intent=getIntent();
-        str1=intent.getStringExtra("vall");
-        languages = intent.getExtras().getString("language");
+        str1=intent.getStringExtra("val");
+        String languages = intent.getExtras().getString("language");
         if(languages.equals("ENGLISH")) {
 
             context = LocalHelper.setLocale(showReview.this, "en");
