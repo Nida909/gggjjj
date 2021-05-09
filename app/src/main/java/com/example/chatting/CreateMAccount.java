@@ -167,6 +167,7 @@ if(check.equals("MilkMan"))
             db.close();
             Intent intent = new Intent(CreateMAccount.this, AddMilkInfo.class);
             intent.putExtra("val1", Email);
+    intent.putExtra("language", str);
 
             startActivity(intent);
 }else if(check.equals("Customer"))
