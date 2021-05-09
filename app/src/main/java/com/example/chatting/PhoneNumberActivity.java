@@ -16,9 +16,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class PhoneNumberActivity extends AppCompatActivity {
     ActivityPhoneNumberBinding binding;
+    TextView t1,t2;
     Button continueBtn;
     EditText phoneBox;
-    TextView num,id11;
     String str,str1;
     FirebaseAuth auth;
     String languages;
@@ -27,14 +27,15 @@ public class PhoneNumberActivity extends AppCompatActivity {
     Resources resources;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
-        num =findViewById(R.id.verify);
-        id11=findViewById(R.id.id1);
+
         phoneBox=findViewById(R.id.phoneBox);
         continueBtn=findViewById(R.id.continueBtn);
+
 
         Intent inten=getIntent();
         languages = inten.getExtras().getString("language");
@@ -51,8 +52,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            num.setText(resources.getString(R.string.verify1));
-            id11.setText(resources.getString(R.string.otp1));
+
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
             str1="اردو";
@@ -71,8 +71,6 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            num.setText(resources.getString(R.string.verify1));
-            id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
             str1="ENGLISH";
