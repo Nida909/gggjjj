@@ -29,13 +29,14 @@ public class PhoneNumberActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        verify=findViewById(R.id.verify);
-        id1=findViewById(R.id.id1);
-        phoneBox=findViewById(R.id.phoneBox);
-        continueBtn=findViewById(R.id.continueBtn);
+
         Intent inten=getIntent();
         languages = inten.getExtras().getString("language");
         if(languages.equals("اردو")) {
+            verify=findViewById(R.id.verify);
+            id1=findViewById(R.id.id1);
+            phoneBox=findViewById(R.id.phoneBox);
+            continueBtn=findViewById(R.id.continueBtn);
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "an");
             resources = context.getResources();
@@ -56,6 +57,10 @@ public class PhoneNumberActivity extends AppCompatActivity {
 
         }
         if(languages.equals("ENGLISH")) {
+            verify=findViewById(R.id.verify);
+            id1=findViewById(R.id.id1);
+            phoneBox=findViewById(R.id.phoneBox);
+            continueBtn=findViewById(R.id.continueBtn);
 
             context = LocalHelper.setLocale(PhoneNumberActivity.this, "en");
             resources = context.getResources();
