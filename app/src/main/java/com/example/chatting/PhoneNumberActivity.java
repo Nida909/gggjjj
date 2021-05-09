@@ -18,10 +18,11 @@ public class PhoneNumberActivity extends AppCompatActivity {
     ActivityPhoneNumberBinding binding;
     Button continueBtn;
     EditText phoneBox;
+    TextView verify,id11;
     String str,str1;
     FirebaseAuth auth;
     String languages;
-    TextView verifynum,id11;
+
     Context context;
     Resources resources;
 
@@ -30,7 +31,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
-        verifynum=findViewById(R.id.verify);
+        verify =findViewById(R.id.verify);
         id11=findViewById(R.id.id1);
         phoneBox=findViewById(R.id.phoneBox);
         continueBtn=findViewById(R.id.continueBtn);
@@ -52,7 +53,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verifynum.setText(resources.getString(R.string.verify1));
+            verify.setText(resources.getString(R.string.verify1));
             id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
@@ -74,7 +75,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             phoneBox = findViewById(R.id.phoneBox);
             auth = FirebaseAuth.getInstance();
             getSupportActionBar().hide();
-            verifynum.setText(resources.getString(R.string.verify1));
+            verify.setText(resources.getString(R.string.verify1));
             id11.setText(resources.getString(R.string.otp1));
             phoneBox.setHint(resources.getString(R.string.phone1));
             continueBtn.setText(resources.getString(R.string.continue1));
