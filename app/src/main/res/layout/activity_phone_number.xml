@@ -23,6 +23,7 @@
         android:textSize="20dp"
         android:layout_gravity="center"
         android:textColor="@android:color/black"
+        android:id="@+id/verify"
         />
 
     <TextView
@@ -32,6 +33,7 @@
         android:textStyle="bold"
         android:textSize="13dp"
         android:layout_gravity="center"
+        android:id="@+id/id1"
         />
 
     <EditText

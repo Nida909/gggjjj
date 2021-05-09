@@ -69,6 +69,13 @@
     <string name="givereview"> Give Review </string>
     <string name="typereview"> Type Your Review </string>
 
+    <string name="verify"> Verify Your Phone Number </string>
+    <string name="otp"> App will send an SMS message to verify your phone number </string>
+    <string name="phonebox"> Type your phone number </string>
+    <string name="continuebtn"> Continue </string>
+
+
+
 
 
 
