@@ -6,8 +6,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
@@ -16,6 +18,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -69,6 +72,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     FirebaseDatabase datab;
     DatabaseReference ref;
     TextView distn;
+    Button btn;
+    Context context;
+    Resources resources;
+    String languages,lang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,10 +85,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         location=(EditText)findViewById(R.id.searchbar);
         Intent intent=getIntent();
         dbHelper = new DatabaseHelper(this);
+        btn=findViewById(R.id.selectRider);
 
         milkman=intent.getStringExtra("milkman");
         customer=intent.getStringExtra("customer");
         milkmanLoc=intent.getStringExtra("milkmanL");
+        languages=intent.getStringExtra("language");
+
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(MapsActivity.this, "en");
+            resources = context.getResources();
+            location.setText(resources.getString(R.string.dropoff));
+            btn.setText(resources.getString(R.string.continue1));
+
+            lang="ENGLISH";
+        }
+        if(languages.equals("اردو")) {
+            context = LocalHelper.setLocale(MapsActivity.this, "an");
+            resources = context.getResources();
+            location.setText(resources.getString(R.string.dropoff));
+            btn.setText(resources.getString(R.string.continue1));
+            lang="اردو";
+
+        }
+
         datab = FirebaseDatabase.getInstance();
          ref = datab.getReference();
         ref.child("copy").addValueEventListener(new ValueEventListener() {
@@ -127,11 +157,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     latLng2=new LatLng(address.getLatitude(),address.getLongitude());
                     distance = SphericalUtil.computeDistanceBetween(latLng1, latLng2);
                     distance=(distance/1000);//km
-                    map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
-               pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
-               distn.setText("Distance to DropOff is "+distance+"Km");
-                    polyline2=map.addPolyline(pp);
+
+                    if(languages.equals("ENGLISH"))
+                    {
+
+                        context = LocalHelper.setLocale(MapsActivity.this, "en");
+                        resources = context.getResources();
+                        location.setText(resources.getString(R.string.dropoff));
+
+                        map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
+                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
+                        pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
+                        distn.setText("Distance to DropOff is "+distance+"Km");
+                        polyline2=map.addPolyline(pp);
+
+                        lang="ENGLISH";
+                    }
+                    if(languages.equals("اردو")) {
+                        context = LocalHelper.setLocale(MapsActivity.this, "an");
+                        resources = context.getResources();
+                        map.addMarker(new MarkerOptions().position(latLng2).title("جہاں سے آپ دودھ لیں گے"));
+                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
+                        pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
+                        distn.setText("Distance to DropOff is "+distance+"Km");
+                        polyline2=map.addPolyline(pp);
+                        lang="اردو";
+
+                    }
+
+
                 }
             }
         });
@@ -151,8 +205,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             Address address=addressList1.get(0);
             latLng1=new LatLng(address.getLatitude(),address.getLongitude());
-            map.addMarker(new MarkerOptions().position(latLng1).title("Milkman Location"));
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1,10));
+
+            if(languages.equals("ENGLISH"))
+            {
+
+                context = LocalHelper.setLocale(MapsActivity.this, "en");
+                resources = context.getResources();
+                map.addMarker(new MarkerOptions().position(latLng1).title("Milkman Location"));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1,10));
+
+
+
+                lang="ENGLISH";
+            }
+            if(languages.equals("اردو")) {
+                context = LocalHelper.setLocale(MapsActivity.this, "an");
+                resources = context.getResources();
+                map.addMarker(new MarkerOptions().position(latLng2).title("دودھ فروش کا مقام"));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1,10));
+                lang="اردو";
+
+            }
+
+
 
 
         }
@@ -181,12 +256,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         @Override
                         public void onMapReady(GoogleMap googleMap) {
                            latLng3=new LatLng(location.getLatitude(),location.getLongitude());
-                            MarkerOptions options=new MarkerOptions().position(latLng3).title("your current location");
-                            //for zooming app;
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng3,10));
-                            googleMap.addMarker(options);
-                            polyline1=googleMap.addPolyline(new PolylineOptions().clickable(true).add(latLng1,latLng3));
-                            distn.setText("Distance to current location: "+SphericalUtil.computeDistanceBetween(latLng1, latLng3)+"Km");
+                            if(languages.equals("ENGLISH"))
+                            {
+
+                                context = LocalHelper.setLocale(MapsActivity.this, "en");
+                                resources = context.getResources();
+
+                                MarkerOptions options=new MarkerOptions().position(latLng3).title("your current location");
+                                //for zooming app;
+                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng3,10));
+                                googleMap.addMarker(options);
+                                polyline1=googleMap.addPolyline(new PolylineOptions().clickable(true).add(latLng1,latLng3));
+                                distn.setText("Distance to current location: "+SphericalUtil.computeDistanceBetween(latLng1, latLng3)+"Km");
+
+
+                                lang="ENGLISH";
+                            }
+                            if(languages.equals("اردو")) {
+                                context = LocalHelper.setLocale(MapsActivity.this, "an");
+                                resources = context.getResources();
+                                MarkerOptions options=new MarkerOptions().position(latLng3).title("آپ کا موجودہ مقام");
+                                //for zooming app;
+                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng3,10));
+                                googleMap.addMarker(options);
+                                polyline1=googleMap.addPolyline(new PolylineOptions().clickable(true).add(latLng1,latLng3));
+                                distn.setText("Distance to current location: "+SphericalUtil.computeDistanceBetween(latLng1, latLng3)+"Km");
+                                lang="اردو";
+
+                            }
+
+
+
                         }
                     });
             }
@@ -245,6 +345,7 @@ ref.child("check").setValue(b);
                 intn.putExtra("Distance",distance );
                 intn.putExtra("PickUp",milkmanLoc);
                 intn.putExtra("DropOff",str);
+                intn.putExtra("language",lang);
                 intn.putExtra("Count", String.valueOf(counter));
                 startActivity(intn);
             }
