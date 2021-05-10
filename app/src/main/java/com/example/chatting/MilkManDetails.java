@@ -40,7 +40,7 @@ public class MilkManDetails extends AppCompatActivity {
         t4=(TextView)findViewById(R.id.txt4);
         t5=(TextView)findViewById(R.id.txt5);
         t6=(TextView)findViewById(R.id.txt6);
-        reviews=findViewById(R.id.review);
+        reviews=findViewById(R.id.givereview);
         placeorder=findViewById(R.id.placeorder);
         name=findViewById(R.id.name);
         location=findViewById(R.id.location);
