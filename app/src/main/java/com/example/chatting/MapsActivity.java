@@ -76,13 +76,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Context context;
     Resources resources;
     String languages,lang;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         img=(ImageButton) findViewById(R.id.search);
         location=(EditText)findViewById(R.id.searchbar);
+        btn=findViewById(R.id.selectRider);
         Intent intent=getIntent();
         dbHelper = new DatabaseHelper(this);
         btn=findViewById(R.id.selectRider);
@@ -97,19 +97,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             context = LocalHelper.setLocale(MapsActivity.this, "en");
             resources = context.getResources();
-            location.setText(resources.getString(R.string.dropoff));
             btn.setText(resources.getString(R.string.continue1));
+            location.setHint(resources.getString(R.string.dropoff));
 
             lang="ENGLISH";
         }
         if(languages.equals("اردو")) {
             context = LocalHelper.setLocale(MapsActivity.this, "an");
             resources = context.getResources();
-            location.setText(resources.getString(R.string.dropoff));
             btn.setText(resources.getString(R.string.continue1));
+            location.setHint(resources.getString(R.string.dropoff));
             lang="اردو";
 
         }
+
 
         datab = FirebaseDatabase.getInstance();
          ref = datab.getReference();
@@ -157,7 +158,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     latLng2=new LatLng(address.getLatitude(),address.getLongitude());
                     distance = SphericalUtil.computeDistanceBetween(latLng1, latLng2);
                     distance=(distance/1000);//km
-
                     map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
                pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
@@ -276,7 +276,6 @@ ref.child("check").setValue(b);
                 intn.putExtra("Distance",distance );
                 intn.putExtra("PickUp",milkmanLoc);
                 intn.putExtra("DropOff",str);
-                intn.putExtra("language",lang);
                 intn.putExtra("Count", String.valueOf(counter));
                 startActivity(intn);
             }
