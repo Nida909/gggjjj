@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -22,8 +24,13 @@ ListView lv;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
     Activity activity;
+    Context context;
+    Resources resources;
+    String languages;
+    String lang;
     ArrayList<ReviewList> rev=new ArrayList<ReviewList>();
     String str,str1,str2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,28 @@ ListView lv;
         str1=intent.getStringExtra("milkman");
         str2=intent.getStringExtra("customer");
         et=(EditText)findViewById(R.id.edt);
+        languages= intent.getExtras().getString("language");
+
+
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(review.this, "en");
+            resources = context.getResources();
+            et.setHint(resources.getString(R.string.typereview));
+
+
+            lang="ENGLISH";
+        }
+        if(languages.equals("اردو"))
+        {
+            context = LocalHelper.setLocale(review.this, "an");
+            resources = context.getResources();
+            et.setHint(resources.getString(R.string.typereview));
+
+            lang="اردو";
+
+        }
         getSupportActionBar().setTitle("Reviews");
         activity = this;
         dbHelper = new DatabaseHelper(this);
