@@ -292,6 +292,7 @@ ImageButton img;
             resources = context.getResources();
             chatwithothers.setTitle(resources.getString(R.string.chatwithothers));
             //ordershistory.setTitle(resources.getString(R.string.ordershistory));
+            lang="ENGLISH";
 
 
         }
@@ -303,6 +304,7 @@ ImageButton img;
             resources = context.getResources();
             chatwithothers.setTitle(resources.getString(R.string.chatwithothers));
             //ordershistory.setTitle(resources.getString(R.string.ordershistory));
+            lang="اردو";
 
 
         }
@@ -341,6 +343,7 @@ ImageButton img;
         {
             Intent intent = new Intent(MilkManList.this, SearchNearest.class);
             intent.putExtra("val",  str);
+            intent.putExtra("language",lang);
             startActivity(intent);
         }
 

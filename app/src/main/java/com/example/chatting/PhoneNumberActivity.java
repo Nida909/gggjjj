@@ -32,13 +32,10 @@ public class PhoneNumberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
-t1=findViewById(R.id.first);
-t2=findViewById(R.id.second);
-
-
-
+        t1=findViewById(R.id.first);
+        t2=findViewById(R.id.second);
         Intent inten=getIntent();
-        languages = inten.getExtras().getString("language");
+        String languages = inten.getExtras().getString("language");
 
         if(languages.equals("اردو")) {
 
