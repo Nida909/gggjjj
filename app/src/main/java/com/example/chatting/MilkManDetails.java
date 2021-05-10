@@ -1,6 +1,8 @@
 package com.example.chatting;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -13,11 +15,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MilkManDetails extends AppCompatActivity {
-    TextView t1,t2,t3,t4,t5,t6;
+    TextView t1,t2,t3,t4,t5,t6,name,location,quality,quantily,price,heading,number;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
     String str,str2,s1,s2,s3,s4,s5,s6;
-Button reviews;
+    String lang;
+    Context context;
+    Resources resources;
+    String languages;
+    Button reviews, placeorder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +34,58 @@ Button reviews;
         str2=intent.getStringExtra("val2");//customer id
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
-        reviews=(Button)findViewById(R.id.givereview);
         t1=(TextView)findViewById(R.id.txt1);
         t2=(TextView)findViewById(R.id.txt2);
         t3=(TextView)findViewById(R.id.txt3);
         t4=(TextView)findViewById(R.id.txt4);
         t5=(TextView)findViewById(R.id.txt5);
         t6=(TextView)findViewById(R.id.txt6);
+        reviews=findViewById(R.id.givereview);
+        placeorder=findViewById(R.id.placeorder);
+        name=findViewById(R.id.name);
+        location=findViewById(R.id.location);
+        number=findViewById(R.id.number);
+        quality=findViewById(R.id.milkquality);
+        quantily=findViewById(R.id.milkquantity);
+        price=findViewById(R.id.milkprice);
+        heading=findViewById(R.id.milkmandetail);
+        languages= intent.getExtras().getString("language");
+
+
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(MilkManDetails.this, "en");
+            resources = context.getResources();
+            heading.setText(resources.getString(R.string.milkmandetail));
+            name.setText(resources.getString(R.string.named));
+            location.setText(resources.getString(R.string.locationd));
+            number.setText(resources.getString(R.string.numberd));
+            quantily.setText(resources.getString(R.string.quantityd));
+            quality.setText(resources.getString(R.string.qualityd));
+            price.setText(resources.getString(R.string.priced));
+            placeorder.setText(resources.getString(R.string.placeorder));
+            reviews.setText(resources.getString(R.string.givereview));
+            lang="ENGLISH";
+        }
+        if(languages.equals("اردو"))
+        {
+            context = LocalHelper.setLocale(MilkManDetails.this, "an");
+            resources = context.getResources();
+            heading.setText(resources.getString(R.string.milkmandetail));
+            name.setText(resources.getString(R.string.named));
+            location.setText(resources.getString(R.string.locationd));
+            number.setText(resources.getString(R.string.numberd));
+            quantily.setText(resources.getString(R.string.quantityd));
+            quality.setText(resources.getString(R.string.qualityd));
+            price.setText(resources.getString(R.string.priced));
+            placeorder.setText(resources.getString(R.string.placeorder));
+            reviews.setText(resources.getString(R.string.givereview));
+            lang="اردو";
+
+        }
+
+
         String[] colm={DatabaseContract.MilkMan.COL_NAME, DatabaseContract.MilkMan.COL_LOCATION, DatabaseContract.MilkMan.COL_CONTACT,
        DatabaseContract.MilkMan.COL_QUALITY, DatabaseContract.MilkMan.COL_QUANTITY, DatabaseContract.MilkMan.COL_PRICE};
         Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME,colm, DatabaseContract.MilkMan._ID + "=?", new String[] {str}
