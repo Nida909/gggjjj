@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -40,6 +41,7 @@ ImageButton img;
     String languages;
     private ProgressDialog progressDialog;
     TextView tv;
+    Button nearest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,7 @@ ImageButton img;
         db = dbh.getReadableDatabase();
         tv = (TextView) findViewById(R.id.txt);
         edt=(EditText) findViewById(R.id.searchbar);
+        nearest=findViewById(R.id.nearest);
 
 
         Context context;
@@ -64,6 +67,7 @@ ImageButton img;
             resources = context.getResources();
             tv.setText(resources.getString(R.string.ListOfMilkMans));
             edt.setHint(resources.getString(R.string.searchbylocation));
+            nearest.setHint(resources.getString(R.string.nearone));
             lang="ENGLISH";
         }
         if(languages.equals("اردو"))
@@ -72,6 +76,7 @@ ImageButton img;
             resources = context.getResources();
             tv.setText(resources.getString(R.string.ListOfMilkMans));
             edt.setHint(resources.getString(R.string.searchbylocation));
+            nearest.setHint(resources.getString(R.string.nearone));
             lang="اردو";
 
         }

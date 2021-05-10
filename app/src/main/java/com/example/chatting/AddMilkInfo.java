@@ -1,6 +1,7 @@
 package com.example.chatting;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AddMilkInfo extends AppCompatActivity {
     android.widget.RadioGroup RadioGroup;
     EditText Milkquantity, Milkprice;
+    TextView cat, heading;
     String str,vall,str1;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
@@ -29,7 +32,6 @@ public class AddMilkInfo extends AppCompatActivity {
     Resources resources;
     RadioButton goatmilk, cowmilk, baffalomilk;
     Button savedetails;
-    TextView cat, heading;
     MenuItem SearchOrders, OtherMilkMans,Reviews;
     String languages;
     String type;
@@ -38,13 +40,12 @@ public class AddMilkInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_milk_info);
+
+
         Intent inten=getIntent();
-       str= inten.getStringExtra("val1");
+        str= inten.getStringExtra("val1");
         languages = inten.getExtras().getString("language");
-       dbHelper=new DatabaseHelper(this);
-
-        db=dbHelper.getReadableDatabase();
-
+        dbHelper=new DatabaseHelper(this);
         heading=findViewById(R.id.heading);
         savedetails=findViewById(R.id.savedetails);
         cat=findViewById(R.id.cat);
@@ -54,6 +55,11 @@ public class AddMilkInfo extends AppCompatActivity {
         cowmilk=findViewById(R.id.cowmilk);
         goatmilk=findViewById(R.id.goatmilk);
         baffalomilk=findViewById(R.id.baffalomilk);
+
+
+
+
+        db=dbHelper.getReadableDatabase();
         String[] columns = {DatabaseContract.MilkMan._ID};
         Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, columns, DatabaseContract.MilkMan.COL_EMAIL + "=?", new String[]{str}
                 , null, null, null, null);
@@ -64,6 +70,7 @@ public class AddMilkInfo extends AppCompatActivity {
         else{
             vall="0";
         }
+
         if(languages.equals("ENGLISH"))
         {
 
@@ -110,6 +117,7 @@ public class AddMilkInfo extends AppCompatActivity {
 
 
 
+
     public void PostDetails (View view) {
         db=dbHelper.getWritableDatabase();
         int quantity=Integer.parseInt(Milkquantity.getText().toString());
@@ -117,29 +125,17 @@ public class AddMilkInfo extends AppCompatActivity {
         int checkid=RadioGroup.getCheckedRadioButtonId();
         RadioButton radioButton=findViewById(checkid);
         String category= radioButton.getText().toString();
-        if(category.equals("گائے کا دودھ"))
+        if(category.equals("گائے کا دودھ")||category.equals("Cow Milk"))
         {
             type="Cow Milk";
         }
-        if(category.equals("بکری کا دود"))
+        if(category.equals(" بکری کا دودھ")||category.equals("Goat Milk"))
         {
             type="Goat Milk";
         }
-        if(category.equals("بھینس کا دودھ"))
+        if(category.equals(" بھینس کا دودھ")||category.equals("Baffalo Milk"))
         {
             type="Baffalo Milk";
-        }
-        if(category.equals("Goat Milk"))
-        {
-            type="Goat Milk";
-        }
-        if(category.equals("Baffalo Milk"))
-        {
-            type="Baffalo Milk";
-        }
-        if(category.equals("Cow Milk"))
-        {
-            type="Cow Milk";
         }
         if(quantity==0 || price==0 )
         {
@@ -186,15 +182,19 @@ public class AddMilkInfo extends AppCompatActivity {
             Reviews.setTitle(resources.getString(R.string.Reviews));
         }
 
+
         return true;
 
 
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.SearchOrders:
+
+
                 Intent intent=new Intent(this,CustomerList1.class);
                 intent.putExtra("var",vall);
                 intent.putExtra("language",str1);

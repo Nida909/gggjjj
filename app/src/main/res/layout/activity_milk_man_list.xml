@@ -59,7 +59,7 @@
         android:text="Lists Of Milk Mans"
         android:textSize="32dp"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/yellow"
         android:textStyle="bold"
    android:layout_below="@id/nearest"
         android:layout_marginBottom="30dp"
