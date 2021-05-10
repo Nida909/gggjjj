@@ -67,7 +67,7 @@ ImageButton img;
             resources = context.getResources();
             tv.setText(resources.getString(R.string.ListOfMilkMans));
             edt.setHint(resources.getString(R.string.searchbylocation));
-            nearest.setHint(resources.getString(R.string.nearone));
+            nearest.setText(resources.getString(R.string.nearone));
             lang="ENGLISH";
         }
         if(languages.equals("اردو"))
@@ -76,7 +76,8 @@ ImageButton img;
             resources = context.getResources();
             tv.setText(resources.getString(R.string.ListOfMilkMans));
             edt.setHint(resources.getString(R.string.searchbylocation));
-            nearest.setHint(resources.getString(R.string.nearone));
+            nearest.setText(resources.getString(R.string.nearone));
+
             lang="اردو";
 
         }
