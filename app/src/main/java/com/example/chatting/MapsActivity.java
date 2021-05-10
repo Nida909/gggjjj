@@ -164,28 +164,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         context = LocalHelper.setLocale(MapsActivity.this, "en");
                         resources = context.getResources();
                         location.setText(resources.getString(R.string.dropoff));
-
-                        map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
-                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
-                        pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
-                        distn.setText("Distance to DropOff is "+distance+"Km");
-                        polyline2=map.addPolyline(pp);
+                        btn.setText(resources.getString(R.string.continue1));
 
                         lang="ENGLISH";
                     }
                     if(languages.equals("اردو")) {
                         context = LocalHelper.setLocale(MapsActivity.this, "an");
                         resources = context.getResources();
-                        map.addMarker(new MarkerOptions().position(latLng2).title("جہاں سے آپ دودھ لیں گے"));
-                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
-                        pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
-                        distn.setText("Distance to DropOff is "+distance+"Km");
-                        polyline2=map.addPolyline(pp);
+                        location.setText(resources.getString(R.string.dropoff));
+                        btn.setText(resources.getString(R.string.continue1));
                         lang="اردو";
 
                     }
 
-
+                    map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
+               pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
+               distn.setText("Distance to DropOff is "+distance+"Km");
+                    polyline2=map.addPolyline(pp);
                 }
             }
         });
@@ -205,29 +201,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             Address address=addressList1.get(0);
             latLng1=new LatLng(address.getLatitude(),address.getLongitude());
-
-            if(languages.equals("ENGLISH"))
-            {
-
-                context = LocalHelper.setLocale(MapsActivity.this, "en");
-                resources = context.getResources();
-                map.addMarker(new MarkerOptions().position(latLng1).title("Milkman Location"));
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1,10));
-
-
-
-                lang="ENGLISH";
-            }
-            if(languages.equals("اردو")) {
-                context = LocalHelper.setLocale(MapsActivity.this, "an");
-                resources = context.getResources();
-                map.addMarker(new MarkerOptions().position(latLng2).title("دودھ فروش کا مقام"));
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1,10));
-                lang="اردو";
-
-            }
-
-
+            map.addMarker(new MarkerOptions().position(latLng1).title("Milkman Location"));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1,10));
 
 
         }
@@ -256,37 +231,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         @Override
                         public void onMapReady(GoogleMap googleMap) {
                            latLng3=new LatLng(location.getLatitude(),location.getLongitude());
-                            if(languages.equals("ENGLISH"))
-                            {
-
-                                context = LocalHelper.setLocale(MapsActivity.this, "en");
-                                resources = context.getResources();
-
-                                MarkerOptions options=new MarkerOptions().position(latLng3).title("your current location");
-                                //for zooming app;
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng3,10));
-                                googleMap.addMarker(options);
-                                polyline1=googleMap.addPolyline(new PolylineOptions().clickable(true).add(latLng1,latLng3));
-                                distn.setText("Distance to current location: "+SphericalUtil.computeDistanceBetween(latLng1, latLng3)+"Km");
-
-
-                                lang="ENGLISH";
-                            }
-                            if(languages.equals("اردو")) {
-                                context = LocalHelper.setLocale(MapsActivity.this, "an");
-                                resources = context.getResources();
-                                MarkerOptions options=new MarkerOptions().position(latLng3).title("آپ کا موجودہ مقام");
-                                //for zooming app;
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng3,10));
-                                googleMap.addMarker(options);
-                                polyline1=googleMap.addPolyline(new PolylineOptions().clickable(true).add(latLng1,latLng3));
-                                distn.setText("Distance to current location: "+SphericalUtil.computeDistanceBetween(latLng1, latLng3)+"Km");
-                                lang="اردو";
-
-                            }
-
-
-
+                            MarkerOptions options=new MarkerOptions().position(latLng3).title("your current location");
+                            //for zooming app;
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng3,10));
+                            googleMap.addMarker(options);
+                            polyline1=googleMap.addPolyline(new PolylineOptions().clickable(true).add(latLng1,latLng3));
+                            distn.setText("Distance to current location: "+SphericalUtil.computeDistanceBetween(latLng1, latLng3)+"Km");
                         }
                     });
             }
