@@ -97,7 +97,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             context = LocalHelper.setLocale(MapsActivity.this, "en");
             resources = context.getResources();
-            location.setHint(resources.getString(R.string.dropoff));
+            location.setText(resources.getString(R.string.dropoff));
             btn.setText(resources.getString(R.string.continue1));
 
             lang="ENGLISH";
@@ -105,7 +105,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if(languages.equals("اردو")) {
             context = LocalHelper.setLocale(MapsActivity.this, "an");
             resources = context.getResources();
-            location.setHint(resources.getString(R.string.dropoff));
+            location.setText(resources.getString(R.string.dropoff));
             btn.setText(resources.getString(R.string.continue1));
             lang="اردو";
 
@@ -157,6 +157,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     latLng2=new LatLng(address.getLatitude(),address.getLongitude());
                     distance = SphericalUtil.computeDistanceBetween(latLng1, latLng2);
                     distance=(distance/1000);//km
+
                     map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
                pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
