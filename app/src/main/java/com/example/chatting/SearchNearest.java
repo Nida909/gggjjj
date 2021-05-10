@@ -44,7 +44,7 @@ public class SearchNearest extends FragmentActivity implements OnMapReadyCallbac
     private MarkerOptions options = new MarkerOptions();
     DatabaseHelper dbh;
     SQLiteDatabase db;
-    String str,s1,s2;
+    String str,s1,s2,str1;
     ArrayList<LatLng> arr=new ArrayList<>();
     ArrayList<nearest> arrn=new ArrayList<>();
     ArrayList<Double> arrl=new ArrayList<>();
@@ -62,6 +62,7 @@ public class SearchNearest extends FragmentActivity implements OnMapReadyCallbac
         dbh = new DatabaseHelper(this);
         Intent inten = getIntent();
         str = inten.getStringExtra("val");
+        str1 = inten.getStringExtra("language");
         db = dbh.getReadableDatabase();
         dis=(TextView)findViewById(R.id.distance);
         client = LocationServices.getFusedLocationProviderClient(this);
@@ -188,6 +189,7 @@ public class SearchNearest extends FragmentActivity implements OnMapReadyCallbac
         Intent intent = new Intent(SearchNearest.this, MilkManDetails.class);
         intent.putExtra("val", arrn.get(count).getId());
         intent.putExtra("val2", str);
+        intent.putExtra("language",str1);
         startActivity(intent);
     }
 }

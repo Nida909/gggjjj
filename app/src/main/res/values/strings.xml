@@ -82,7 +82,8 @@
     <string name="ed3">Your total Price will be displayed here </string>
     <string name="btn1"> Show Price </string>
     <string name="btn2"> Confirm Order </string>
-
+    <string name="category">Category :</string>
+    <string name="loc">Loc :</string>
 
 
 

@@ -57,9 +57,6 @@ ImageButton img;
         edt=(EditText) findViewById(R.id.searchbar);
         nearest=findViewById(R.id.nearest);
 
-
-        Context context;
-        Resources resources;
         if(languages.equals("ENGLISH"))
         {
 
@@ -94,8 +91,8 @@ ImageButton img;
                     Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, colm, DatabaseContract.MilkMan.COL_LOCATION+"=?", new String[] { strs}
                             , null, null, null, null);
                     if (c.getCount() > 0) {
-
-                        if(languages.equals("ENGLISH")) {
+                            context = LocalHelper.setLocale(MilkManList.this, "en");
+                            resources = context.getResources();
                             arrayList.clear();
                             while (c.moveToNext()) {
 
@@ -107,7 +104,7 @@ ImageButton img;
                                 Toast.makeText(MilkManList.this, "message222: " + edt.getText().toString(), Toast.LENGTH_LONG).show();
 
 
-                                MilkMan mObj = new MilkMan(s1, "Category : " + s4 + ", Loc : " + s2, s3);
+                                MilkMan mObj = new MilkMan(s1, resources.getString(R.string.category) + s4 + " , "+resources.getString(R.string.loc) + s2, s3);
 
                                 arrayList.add(mObj);
 
@@ -126,60 +123,21 @@ ImageButton img;
                                     Intent intent = new Intent(MilkManList.this, MilkManDetails.class);
                                     intent.putExtra("val", ss);
                                     intent.putExtra("val2", str);
-                                    intent.putExtra("language",lang);
+                                    intent.putExtra("language", lang);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                                 }
                             });
-                        }
-                        if(languages.equals("اردو")) {
-                            arrayList.clear();
-                            while (c.moveToNext()) {
 
-                                long id = c.getLong(0);
-                                s1 = c.getString(1);
-                                s2 = c.getString(2);
-                                s4 = c.getString(3);
-                                s3 = String.valueOf(id);
-                                Toast.makeText(MilkManList.this, "message222: " + edt.getText().toString(), Toast.LENGTH_LONG).show();
-
-
-                                MilkMan mObj = new MilkMan(s1, "قسم : " + s4 + ", جگہ : " + s2, s3);
-
-                                arrayList.add(mObj);
-
-
-                            }
-
-                            milk1 customList = new milk1(activity, arrayList);
-
-
-                            lv.setAdapter(customList);
-
-                            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                @Override
-                                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                                    String ss = arrayList.get(position).getOrderNo();
-                                    Intent intent = new Intent(MilkManList.this, MilkManDetails.class);
-                                    intent.putExtra("val", ss);
-                                    intent.putExtra("val2", str);
-                                    startActivity(intent);
-                                    Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
-                                }
-                            });
-                        }
-
-
-                    }
-                    else {
+                    }else {
                        /* if(languages.equals("ENGLISH")) {
                             tv.setText("No MilkMan Found ");
                         }
                         if(languages.equals("اردو")){
                             tv.setText("کوئی دودھ فروش دستیاب نہیں ہے ");
                         }*/
-                        Toast.makeText(MilkManList.this, "No MilkMan Found", Toast.LENGTH_LONG).show();
-                    }
+                            Toast.makeText(MilkManList.this, "No MilkMan Found", Toast.LENGTH_LONG).show();
+                        }
                 }
                 else{
                     Toast.makeText(MilkManList.this, "Please Enter Any Location ", Toast.LENGTH_LONG).show();
@@ -192,25 +150,34 @@ ImageButton img;
         lv = (ListView) findViewById(R.id.list1);
         //move activity
 
-        String[] colm = {DatabaseContract.MilkMan._ID, DatabaseContract.MilkMan.COL_NAME, DatabaseContract.MilkMan.COL_LOCATION, DatabaseContract.MilkMan.COL_QUALITY};
-        Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME, colm, null, null
+        String[] colms = {DatabaseContract.MilkMan._ID, DatabaseContract.MilkMan.COL_NAME, DatabaseContract.MilkMan.COL_LOCATION, DatabaseContract.MilkMan.COL_QUALITY};
+        Cursor cc = db.query(DatabaseContract.MilkMan.TABLE_NAME, colms, null, null
                 , null, null, null, null);
-        if (c.getCount() > 0) {
-            if(languages.equals("ENGLISH")) {
+        if (cc.getCount() > 0) {
 
+                context = LocalHelper.setLocale(MilkManList.this, "en");
+                resources = context.getResources();
 
                 Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
 
 
-                while (c.moveToNext()) {
-                    long id = c.getLong(0);
-                    s1 = c.getString(1);
-                    s2 = c.getString(2);
-                    s4 = c.getString(3);
+                while (cc.moveToNext()) {
+                    long id = cc.getLong(0);
+                    s1 = cc.getString(1);
+                    s2 = cc.getString(2);
+                    s4 = cc.getString(3);
                     s3 = String.valueOf(id);
+                    if (languages.equals("ENGLISH")) {
+                        MilkMan mObj = new MilkMan(s1, "Category :" + s4 + ", Loc :" + s2, s3);
 
-                    MilkMan mObj = new MilkMan(s1, "Category : " + s4 + ", Loc : " + s2, s3);
-                    arrayList.add(mObj);
+                        arrayList.add(mObj);
+                    }
+                    else
+                    {
+                        MilkMan mObj = new MilkMan(s1,   "قسم"+s4 +" , "+"جگہ"+s2, s3);
+
+                        arrayList.add(mObj);
+                    }
 
                 }
 
@@ -224,48 +191,14 @@ ImageButton img;
                         Intent intent = new Intent(MilkManList.this, MilkManDetails.class);
                         intent.putExtra("val", ss);
                         intent.putExtra("val2", str);
+                        intent.putExtra("language", lang);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                     }
                 });
 
-            }
-            if(languages.equals("اردو")) {
-
-
-                Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
-
-
-                while (c.moveToNext()) {
-                    long id = c.getLong(0);
-                    s1 = c.getString(1);
-                    s2 = c.getString(2);
-                    s4 = c.getString(3);
-                    s3 = String.valueOf(id);
-
-                    MilkMan mObj = new MilkMan(s1, "قسم : " + s4 + ", جگہ : " + s2, s3);
-                    arrayList.add(mObj);
-
-                }
-
-                milk1 customList = new milk1(activity, arrayList);
-                lv.setAdapter(customList);
-
-                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                        String ss = arrayList.get(position).getOrderNo();
-                        Intent intent = new Intent(MilkManList.this, MilkManDetails.class);
-                        intent.putExtra("val", ss);
-                        intent.putExtra("val2", str);
-                        intent.putExtra("language",lang);
-                        startActivity(intent);
-                    }
-                });
-
-            }
-
-        } else {
+        }
+        else {
 
             /*if(languages.equals("ENGLISH")) {
                 tv.setText("No MilkMan Found ");

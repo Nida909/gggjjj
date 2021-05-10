@@ -49,8 +49,8 @@ public milk1()
             vh = (CustomerLists.ViewHolder) convertView.getTag();
         }
         vh.textViewCountry.setText(customer.get(position).getName());
-        vh.textViewCapital.setText(""+customer.get(position).getContact());
-        vh.tv.setText(""+customer.get(position).getOrderNo());
+        vh.textViewCapital.setText(customer.get(position).getContact());
+        vh.tv.setText(customer.get(position).getOrderNo());
         Log.d("Tag",customer.get(position).getContact());
         return  row;
     }

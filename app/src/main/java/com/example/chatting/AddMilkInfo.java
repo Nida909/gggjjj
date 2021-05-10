@@ -40,7 +40,7 @@ public class AddMilkInfo extends AppCompatActivity {
         setContentView(R.layout.activity_add_milk_info);
         Intent inten=getIntent();
        str= inten.getStringExtra("val1");
-        languages = inten.getExtras().getString("language");
+        languages = inten.getStringExtra("language");
        dbHelper=new DatabaseHelper(this);
 
         db=dbHelper.getReadableDatabase();
@@ -117,31 +117,34 @@ public class AddMilkInfo extends AppCompatActivity {
         int checkid=RadioGroup.getCheckedRadioButtonId();
         RadioButton radioButton=findViewById(checkid);
         String category= radioButton.getText().toString();
-        if(category.equals("گائے کا دودھ"))
+        if(category.equals(resources.getString(R.string.cowmilk)))
         {
             type="Cow Milk";
-        }
-        if(category.equals("بکری کا دود"))
+        }else if(category.equals(resources.getString(R.string.goatmilk)))
         {
             type="Goat Milk";
         }
-        if(category.equals("بھینس کا دودھ"))
+        else if(category.equals(resources.getString(R.string.baffalomillk)))
         {
             type="Baffalo Milk";
         }
-        if(category.equals("Goat Milk"))
+        else if(category.equals("Goat Milk"))
         {
             type="Goat Milk";
         }
-        if(category.equals("Baffalo Milk"))
+        else if(category.equals("Baffalo Milk"))
         {
             type="Baffalo Milk";
         }
-        if(category.equals("Cow Milk"))
+        else if(category.equals("Cow Milk"))
         {
             type="Cow Milk";
         }
-        if(quantity==0 || price==0 )
+        else
+        {
+            type="Milk";
+        }
+        if(quantity==0|| price==0 )
         {
             Toast.makeText(this, "Please Fill All Fields", Toast.LENGTH_SHORT).show();
         }

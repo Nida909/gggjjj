@@ -32,6 +32,7 @@ public class MilkManDetails extends AppCompatActivity {
         Intent intent=getIntent();
         str=intent.getStringExtra("val");//milkman id
         str2=intent.getStringExtra("val2");//customer id
+        languages= intent.getStringExtra("language");
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
         t1=(TextView)findViewById(R.id.txt1);
@@ -49,7 +50,7 @@ public class MilkManDetails extends AppCompatActivity {
         quantily=findViewById(R.id.milkquantity);
         price=findViewById(R.id.milkprice);
         heading=findViewById(R.id.milkmandetail);
-        languages= intent.getExtras().getString("language");
+
 
 
         if(languages.equals("ENGLISH"))
