@@ -124,7 +124,7 @@ t6.setText(s6);
     }
     public void onplace(View v)
     {
-Intent intn=new Intent(this,MapsActivity.class);
+Intent intn=new Intent(MilkManDetails.this,MapsActivity.class);
 intn.putExtra("milkman",str);
 intn.putExtra("customer",str2);
 intn.putExtra("milkmanL",s2);
@@ -133,7 +133,7 @@ startActivity(intn);
     }
     public void onReview(View v)
     {
-        Intent intnte=new Intent(this,review.class);
+        Intent intnte=new Intent(MilkManDetails.this,review.class);
         intnte.putExtra("milkman",str);
         intnte.putExtra("customer",str2);
         intnte.putExtra("language",lang);
