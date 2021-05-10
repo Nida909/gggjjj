@@ -163,7 +163,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         context = LocalHelper.setLocale(MapsActivity.this, "en");
                         resources = context.getResources();
-                        location.setText(resources.getString(R.string.dropoff));
+                        location.setHint(resources.getString(R.string.dropoff));
                         btn.setText(resources.getString(R.string.continue1));
 
                         lang="ENGLISH";
@@ -171,7 +171,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if(languages.equals("اردو")) {
                         context = LocalHelper.setLocale(MapsActivity.this, "an");
                         resources = context.getResources();
-                        location.setText(resources.getString(R.string.dropoff));
+                        location.setHint(resources.getString(R.string.dropoff));
                         btn.setText(resources.getString(R.string.continue1));
                         lang="اردو";
 
