@@ -127,6 +127,7 @@ Intent intn=new Intent(this,MapsActivity.class);
 intn.putExtra("milkman",str);
 intn.putExtra("customer",str2);
 intn.putExtra("milkmanL",s2);
+        intn.putExtra("language",lang);
 startActivity(intn);
     }
     public void onReview(View v)
@@ -134,6 +135,7 @@ startActivity(intn);
         Intent intnte=new Intent(this,review.class);
         intnte.putExtra("milkman",str);
         intnte.putExtra("customer",str2);
+        intnte.putExtra("language",lang);
         startActivity(intnte);
     }
 }
