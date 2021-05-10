@@ -21,8 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="MILK MAN DETAILS"
-            android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textColor="@color/yellow"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:id="@+id/milkmandetail"
 
@@ -133,16 +133,6 @@
             android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt6"/>
-
-        <Button
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape1"
-            android:text="Give Review"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"
-            android:id="@+id/givereview"/>
         <Button
 
             android:layout_width="wrap_content"
@@ -152,8 +142,18 @@
             android:textStyle="bold"
             android:onClick="onplace"
             android:id="@+id/placeorder"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="0dp"/>
+        <Button
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape1"
+            android:text="Give Review"
+            android:textStyle="bold"
+            android:id="@+id/givereview"
+            android:onClick="onReview"
 
+            />
 
 
     </LinearLayout>

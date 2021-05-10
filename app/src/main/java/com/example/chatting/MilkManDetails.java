@@ -32,7 +32,6 @@ public class MilkManDetails extends AppCompatActivity {
         Intent intent=getIntent();
         str=intent.getStringExtra("val");//milkman id
         str2=intent.getStringExtra("val2");//customer id
-        languages= intent.getStringExtra("language");
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
         t1=(TextView)findViewById(R.id.txt1);
@@ -50,17 +49,7 @@ public class MilkManDetails extends AppCompatActivity {
         quantily=findViewById(R.id.milkquantity);
         price=findViewById(R.id.milkprice);
         heading=findViewById(R.id.milkmandetail);
-        reviews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intnte=new Intent(MilkManDetails.this,review.class);
-                intnte.putExtra("milkman",str);
-                intnte.putExtra("customer",str2);
-                intnte.putExtra("language",lang);
-                startActivity(intnte);
-            }
-        });
-
+        languages= intent.getExtras().getString("language");
 
 
         if(languages.equals("ENGLISH"))
@@ -98,7 +87,7 @@ public class MilkManDetails extends AppCompatActivity {
 
 
         String[] colm={DatabaseContract.MilkMan.COL_NAME, DatabaseContract.MilkMan.COL_LOCATION, DatabaseContract.MilkMan.COL_CONTACT,
-       DatabaseContract.MilkMan.COL_QUALITY, DatabaseContract.MilkMan.COL_QUANTITY, DatabaseContract.MilkMan.COL_PRICE};
+                DatabaseContract.MilkMan.COL_QUALITY, DatabaseContract.MilkMan.COL_QUANTITY, DatabaseContract.MilkMan.COL_PRICE};
         Cursor c = db.query(DatabaseContract.MilkMan.TABLE_NAME,colm, DatabaseContract.MilkMan._ID + "=?", new String[] {str}
                 , null, null, null, null);
         if (c.getCount()==0) {
@@ -115,12 +104,12 @@ public class MilkManDetails extends AppCompatActivity {
         s5=String.valueOf(qnt);
         s6=String.valueOf(prc);
         t1.setText(s1);
-t2.setText(s2);
-t3.setText(s3);
-t4.setText(s4);
-t5.setText(s5);
-t6.setText(s6);
-       String[] values={str2,str};
+        t2.setText(s2);
+        t3.setText(s3);
+        t4.setText(s4);
+        t5.setText(s5);
+        t6.setText(s6);
+        String[] values={str2,str};
         Cursor cr=db.query(DatabaseContract.OrderT.TABLE_NAME,null,"PlacedBy=? AND PlacedTo=?",values,null,null,null);
         if (cr.getCount() > 0) {
         }
@@ -134,11 +123,19 @@ t6.setText(s6);
     }
     public void onplace(View v)
     {
-Intent intn=new Intent(MilkManDetails.this,MapsActivity.class);
-intn.putExtra("milkman",str);
-intn.putExtra("customer",str2);
-intn.putExtra("milkmanL",s2);
+        Intent intn=new Intent(this,MapsActivity.class);
+        intn.putExtra("milkman",str);
+        intn.putExtra("customer",str2);
+        intn.putExtra("milkmanL",s2);
         intn.putExtra("language",lang);
-startActivity(intn);
+        startActivity(intn);
+    }
+    public void onReview(View v)
+    {
+        Intent intnte=new Intent(this,review.class);
+        intnte.putExtra("milkman",str);
+        intnte.putExtra("customer",str2);
+        intnte.putExtra("language",lang);
+        startActivity(intnte);
     }
 }
