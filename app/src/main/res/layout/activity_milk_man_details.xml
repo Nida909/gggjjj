@@ -138,21 +138,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
-            android:text="Place Order"
-            android:textStyle="bold"
-            android:onClick="onplace"
-            android:id="@+id/placeorder"
-            android:layout_marginTop="0dp"/>
-        <Button
-            android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape1"
             android:text="Give Review"
             android:textStyle="bold"
             android:id="@+id/givereview"
 
             />
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape1"
+            android:text="Place Order"
+            android:textStyle="bold"
+            android:onClick="onplace"
+            android:id="@+id/placeorder"
+            android:layout_marginTop="8dp"/>
+
 
 
     </LinearLayout>
