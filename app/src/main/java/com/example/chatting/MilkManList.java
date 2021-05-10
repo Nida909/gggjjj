@@ -331,7 +331,7 @@ ImageButton img;
                 Intent inten = new Intent(MilkManList.this, PhoneNumberActivity.class);
                 //inten.putExtra("var", str);
                 startActivity(inten);
-                inten.putExtra("language",lang);
+                inten.putExtra("language1",lang);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
