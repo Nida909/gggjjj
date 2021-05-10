@@ -48,6 +48,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:onClick="onprice"
+            android:id="@+id/btn1"
             />
         <EditText
             android:layout_width="250dp"
@@ -62,7 +63,7 @@
             android:layout_marginTop="20dp"
             />
         <Button
-            android:layout_width="150dp"
+            android:layout_width="159dp"
             android:layout_height="50dp"
             android:text="Confirm Order"
             android:background="@drawable/shape1"
@@ -70,6 +71,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:onClick="onconfirm"
+            android:id="@+id/btn2"
 
             />
 

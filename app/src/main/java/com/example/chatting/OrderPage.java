@@ -6,10 +6,12 @@ import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,11 +24,15 @@ import com.google.firebase.database.FirebaseDatabase;
 public class OrderPage extends AppCompatActivity {
 String str,str1;
 EditText ed1,ed2,ed3;
+Button btn1,btn2;
 DatabaseHelper dbh;
 SQLiteDatabase db;
 double prc;
 double distance;
     String pickup,dropoff,Count;
+    Context context;
+    Resources resources;
+    String languages,lang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +43,43 @@ double distance;
         pickup=intn.getStringExtra("PickUp");
         dropoff=intn.getStringExtra("DropOff");
         Count=intn.getStringExtra("Count");
+        languages=intn.getStringExtra("language");
+
+
+
 
         distance=intn.getDoubleExtra("Distance",0.00);
         dbh=new DatabaseHelper(this);
         ed1=(EditText)findViewById(R.id.edt1);
         ed2=(EditText)findViewById(R.id.edt2);
         ed3=(EditText)findViewById(R.id.edt3);
+        btn1=findViewById(R.id.btn1);
+        btn2=findViewById(R.id.btn2);
+
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(OrderPage.this, "en");
+            resources = context.getResources();
+            ed1.setHint(resources.getString(R.string.ed1));
+            ed2.setHint(resources.getString(R.string.ed2));
+            ed3.setHint(resources.getString(R.string.ed3));
+            btn1.setText(resources.getString(R.string.btn1));
+            btn2.setText(resources.getString(R.string.btn2));
+
+            lang="ENGLISH";
+        }
+        if(languages.equals("اردو")) {
+            context = LocalHelper.setLocale(OrderPage.this, "an");
+            resources = context.getResources();
+            ed1.setHint(resources.getString(R.string.ed1));
+            ed2.setHint(resources.getString(R.string.ed2));
+            ed3.setHint(resources.getString(R.string.ed3));
+            btn1.setText(resources.getString(R.string.btn1));
+            btn2.setText(resources.getString(R.string.btn2));
+            lang="اردو";
+
+        }
     }
     public void onprice(View v)
     {

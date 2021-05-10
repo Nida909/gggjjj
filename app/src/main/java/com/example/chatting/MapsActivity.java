@@ -276,6 +276,7 @@ ref.child("check").setValue(b);
                 intn.putExtra("Distance",distance );
                 intn.putExtra("PickUp",milkmanLoc);
                 intn.putExtra("DropOff",str);
+                intn.putExtra("language",lang);
                 intn.putExtra("Count", String.valueOf(counter));
                 startActivity(intn);
             }

@@ -78,6 +78,12 @@
 
     <string name="dropoff"> آپ کو دودھ کہاں سے حاصل کرنا ہے؟</string>
 
+    <string name="ed1"> دودھ کی مقدار درج کریں </string>
+    <string name="ed2"> دودھ کی قسم درج کریں</string>
+    <string name="ed3"> آپ کی کل قیمت یہاں ظاہر ہوگی</string>
+    <string name="btn1">قیمت دکھائیں</string>
+    <string name="btn2"> آرڈر محفوظ کریں </string>
+
 
 
 

@@ -77,6 +77,12 @@
 
     <string name="dropoff"> Enter Drop Off Location </string>
 
+    <string name="ed1"> Enter Milk Quantity </string>
+    <string name="ed2"> Enter Milk Category</string>
+    <string name="ed3">Your total Price will be displayed here </string>
+    <string name="btn1"> Show Price </string>
+    <string name="btn2"> Confirm Order </string>
+
 
 
 
