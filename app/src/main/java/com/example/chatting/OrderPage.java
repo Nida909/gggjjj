@@ -97,7 +97,7 @@ double distance;
         double distn=(distance*10)+50;
         prc=price*qnt;
         prc=prc+distn;
-        ed3.setText(prc);
+        ed3.setText((int) prc);
     }
     public void onconfirm(View v)
     {
