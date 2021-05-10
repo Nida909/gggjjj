@@ -152,6 +152,7 @@
             android:textStyle="bold"
             android:id="@+id/givereview"
             android:onClick="onReview"
+
             />
 
 

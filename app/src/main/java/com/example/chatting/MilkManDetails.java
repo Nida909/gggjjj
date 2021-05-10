@@ -28,7 +28,7 @@ Button reviews;
         str2=intent.getStringExtra("val2");//customer id
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
-        reviews=(Button)findViewById(R.id.review);
+        reviews=(Button)findViewById(R.id.givereview);
         t1=(TextView)findViewById(R.id.txt1);
         t2=(TextView)findViewById(R.id.txt2);
         t3=(TextView)findViewById(R.id.txt3);
