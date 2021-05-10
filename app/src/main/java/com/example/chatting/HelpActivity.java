@@ -34,22 +34,27 @@ public class HelpActivity extends AppCompatActivity {
                 String s = listView.getItemAtPosition(position).toString();
                 switch (s) {
 
-                    case "Can't Create My Account":
+                    case "Create My Account":
                         startActivity(new Intent(HelpActivity.this, Registration.class));
                         break;
-                    case "Can't Log In to My Account":
+                    case "Log In":
                         startActivity(new Intent(HelpActivity.this, LogIn.class));
                         break;
-                    case "Can't Find Nearest Milk Man":
+                    case "Nearest Milk Man":
                         startActivity(new Intent(HelpActivity.this, CantFindNearestMilkMan.class));
                         break;
-                    case "Can't Update Milk Info":
+                    case "Milk Info Update":
                         startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
                         break;
                     case "Chat Box Is Not Working":
                         startActivity(new Intent(HelpActivity.this, ChatBoxNotWorking.class));
                         break;
-
+                    case "Giving Review":
+                        startActivity(new Intent(HelpActivity.this, GivigReview.class));
+                        break;
+                    case "Placing Order":
+                        startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
+                        break;
                 }
 
 

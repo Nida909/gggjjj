@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatting"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SearchNearest"></activity>
-        <activity android:name=".orders"></activity>
+        <activity android:name=".PlacingOrder"></activity>
+        <activity android:name=".GivigReview" />
+        <activity android:name=".Registration" />
+        <activity android:name=".SearchNearest" />
+        <activity android:name=".orders" />
         <activity android:name=".OwnerMain" />
         <activity android:name=".CantFindNearestMilkMan" />
         <activity android:name=".ChatBoxNotWorking" />
