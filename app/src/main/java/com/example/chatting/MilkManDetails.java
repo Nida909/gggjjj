@@ -50,6 +50,16 @@ public class MilkManDetails extends AppCompatActivity {
         quantily=findViewById(R.id.milkquantity);
         price=findViewById(R.id.milkprice);
         heading=findViewById(R.id.milkmandetail);
+        reviews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intnte=new Intent(MilkManDetails.this,review.class);
+                intnte.putExtra("milkman",str);
+                intnte.putExtra("customer",str2);
+                intnte.putExtra("language",lang);
+                startActivity(intnte);
+            }
+        });
 
 
 
@@ -130,13 +140,5 @@ intn.putExtra("customer",str2);
 intn.putExtra("milkmanL",s2);
         intn.putExtra("language",lang);
 startActivity(intn);
-    }
-    public void onReview(View v)
-    {
-        Intent intnte=new Intent(MilkManDetails.this,review.class);
-        intnte.putExtra("milkman",str);
-        intnte.putExtra("customer",str2);
-        intnte.putExtra("language",lang);
-        startActivity(intnte);
     }
 }

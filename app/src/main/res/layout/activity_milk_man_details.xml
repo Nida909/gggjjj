@@ -151,7 +151,6 @@
             android:text="Give Review"
             android:textStyle="bold"
             android:id="@+id/givereview"
-            android:onClick="onReview"
 
             />
 
