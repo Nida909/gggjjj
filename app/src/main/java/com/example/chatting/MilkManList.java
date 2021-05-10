@@ -326,7 +326,7 @@ ImageButton img;
                 return true;*/
             case R.id.Chat:
 
-                Intent inten = new Intent(this, PhoneNumberActivity.class);
+                Intent inten = new Intent(MilkManList.this, PhoneNumberActivity.class);
                 //inten.putExtra("var", str);
                 startActivity(inten);
                 inten.putExtra("language",lang);
