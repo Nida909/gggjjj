@@ -97,7 +97,29 @@ double distance;
         double distn=(distance*10)+50;
         prc=price*qnt;
         prc=prc+distn;
-        ed3.setText((int) prc);
+
+
+
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(OrderPage.this, "en");
+            resources = context.getResources();
+            ed3.setText("Total Price : "+prc);
+
+
+            lang="ENGLISH";
+        }
+        if(languages.equals("اردو")) {
+            context = LocalHelper.setLocale(OrderPage.this, "an");
+            resources = context.getResources();
+            ed3.setText(": کل قیمت  "+prc);
+            lang="اردو";
+
+        }
+
+
+
     }
     public void onconfirm(View v)
     {
