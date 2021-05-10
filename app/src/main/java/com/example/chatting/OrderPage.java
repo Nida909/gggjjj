@@ -113,7 +113,7 @@ double distance;
         if(languages.equals("اردو")) {
             context = LocalHelper.setLocale(OrderPage.this, "an");
             resources = context.getResources();
-            ed3.setText(": کل قیمت  "+prc);
+            ed3.setText("کل قیمت : "+prc);
             lang="اردو";
 
         }
