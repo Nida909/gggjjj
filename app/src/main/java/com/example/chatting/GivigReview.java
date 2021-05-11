@@ -66,7 +66,7 @@ public class GivigReview extends AppCompatActivity {
             resources = context.getResources();
             head.setText("عام سوالات");
             reg1.setText("جائزہ کا بٹن کام نہیں کررہا ہے");
-            reg2.setText("یہ میرا جائزہ ذخیرہ نہیں کررہا ہے");
+            reg2.setText("یہ میرا جائزہ نہیں لے رہا ہے");
 
             reg1.setOnClickListener(new View.OnClickListener() {
                 @Override
