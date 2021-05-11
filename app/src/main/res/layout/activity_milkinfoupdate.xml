@@ -13,6 +13,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
+        android:id="@+id/head"
         />
     <RelativeLayout
         android:layout_width="350dp"
@@ -35,7 +36,7 @@
             android:dropDownVerticalOffset="35dp"
             android:popupBackground="@color/white"
             android:textColor="@color/white"
-            android:text="I am not able to upload my Milk Information"
+            android:text="I am not able to upload my milk information"
             android:textStyle="bold"
             android:textSize="18dp"/>
 
