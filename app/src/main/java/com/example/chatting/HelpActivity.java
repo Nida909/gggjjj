@@ -55,23 +55,41 @@ public class HelpActivity extends AppCompatActivity {
                     switch (s) {
 
                         case "Create My Account":
-                            startActivity(new Intent(HelpActivity.this, Registration.class));
+                            Intent inten = new Intent(HelpActivity.this, Registration.class);
+                            lang="ENGLISH";
+                            inten.putExtra("language",lang);
+                            startActivity(inten);
                             break;
                         case "Log In":
-                            startActivity(new Intent(HelpActivity.this, LogIn.class));
+                            Intent intent = new Intent(HelpActivity.this, LogIn.class);
+                            lang="ENGLISH";
+                            intent.putExtra("language",lang);
+                            startActivity(intent);
                             break;
                         case "Nearest Milk Man":
-                            startActivity(new Intent(HelpActivity.this, CantFindNearestMilkMan.class));
+                            Intent intent6 = new Intent(HelpActivity.this, CantFindNearestMilkMan.class);
+                            lang="ENGLISH";
+                            intent6.putExtra("language",lang);
+                            startActivity(intent6);
                             break;
                         case "Chat Box Is Not Working":
-                            startActivity(new Intent(HelpActivity.this, ChatBoxNotWorking.class));
+                            Intent inten7 = new Intent(HelpActivity.this, ChatBoxNotWorking.class);
+                            lang="ENGLISH";
+                            inten7.putExtra("language",lang);
+                            startActivity(inten7);
                             break;
                         case "Giving Review":
-                            startActivity(new Intent(HelpActivity.this, GivigReview.class));
+                            Intent inte = new Intent(HelpActivity.this, GivigReview.class);
+                            lang="ENGLISH";
+                            inte.putExtra("language",lang);
+                            startActivity(inte);
                             break;
 
                         case "Placing Order":
-                            startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
+                            Intent intentt = new Intent(HelpActivity.this, PlacingOrder.class);
+                            lang="ENGLISH";
+                            intentt.putExtra("language",lang);
+                            startActivity(intentt);
                             break;
 
 
@@ -80,7 +98,7 @@ public class HelpActivity extends AppCompatActivity {
                 }
             });
 
-            lang="ENGLISH";
+
 
         }
 
@@ -106,32 +124,38 @@ question.setHint("یہاں تلاش کریں");
 
                         case "اکاؤنٹ بنائیں کا مسئلہ":
                             Intent inten = new Intent(HelpActivity.this, Registration.class);
+                            lang="اردو";
                             inten.putExtra("language",lang);
                             startActivity(inten);
                             break;
                         case "لاگ ان کا مسئلہ":
                             Intent intent = new Intent(HelpActivity.this, LogIn.class);
+                            lang="اردو";
                             intent.putExtra("language",lang);
                             startActivity(intent);
                             break;
                         case "قریب ترین دودھ کا آدمی نہیں مل رہا ہے":
                             Intent intent2 = new Intent(HelpActivity.this, CantFindNearestMilkMan.class);
+                            lang="اردو";
                             intent2.putExtra("language",lang);
                             startActivity(intent2);
                             break;
                         case "چیٹ باکس کام نہیں کررہا ہے":
                             Intent intent3 = new Intent(HelpActivity.this, ChatBoxNotWorking.class);
+                            lang="اردو";
                             intent3.putExtra("language",lang);
                             startActivity(intent3);
                             break;
                         case "جائزہ دینے میں دشواری کا سامنا ہے":
                             Intent intent4 = new Intent(HelpActivity.this, GivigReview.class);
+                            lang="اردو";
                             intent4.putExtra("language",lang);
                             startActivity(intent4);
                             break;
 
                         case "بکنگ آرڈر میں دشواری":
                             Intent intent5 = new Intent(HelpActivity.this, PlacingOrder.class);
+                            lang="اردو";
                             intent5.putExtra("language",lang);
                             startActivity(intent5);
                             break;
@@ -142,7 +166,7 @@ question.setHint("یہاں تلاش کریں");
                 }
             });
 
-            lang="اردو";
+
 
         }
 
