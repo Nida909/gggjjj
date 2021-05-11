@@ -23,18 +23,21 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        Intent intent = getIntent();
-        languages= intent.getExtras().getString("language");
         reg1=findViewById(R.id.reg1);
         reg2=findViewById(R.id.reg2);
         head=findViewById(R.id.head);
 
-
+        Intent intent = getIntent();
+        languages= intent.getExtras().getString("language");
         if(languages.equals("ENGLISH"))
         {
             context = LocalHelper.setLocale(Registration.this, "en");
             resources = context.getResources();
+            head.setText("Common Questions");
+            reg1.setText("App is not taking my Password");
+            reg2.setText("I'm not able to Create my Account");
             reg1.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View v) {
 
