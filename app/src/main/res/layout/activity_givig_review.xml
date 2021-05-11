@@ -39,7 +39,7 @@
             android:dropDownVerticalOffset="35dp"
             android:popupBackground="@color/white"
             android:textColor="@color/white"
-            android:text="Review Button Is not working."
+            android:text="Review Button Is not working"
             android:textStyle="bold"
             android:textSize="18dp"/>
 
