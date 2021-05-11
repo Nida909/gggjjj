@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,12 +25,14 @@ public class HelpActivity extends AppCompatActivity {
     String languages,lang;
     ImageButton img;
     EditText question;
+    TextView text;
     ArrayList<String> user=new ArrayList<>();
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.help_activity);
         img=(ImageButton) findViewById(R.id.search);
         question=(EditText) findViewById(R.id.searchbar) ;
+        text=findViewById(R.id.text);
         Intent intent = getIntent();
         languages= intent.getExtras().getString("language");
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, months);
@@ -88,7 +91,8 @@ public class HelpActivity extends AppCompatActivity {
 
             context = LocalHelper.setLocale(HelpActivity.this, "an");
             resources = context.getResources();
-
+question.setHint("یہاں تلاش کریں");
+            text.setText("آپ کو کس پریشانی کا سامنا ہے؟");
 
             ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,problemsu);
             ListView listView=(ListView)findViewById(R.id.mobile_list);
@@ -101,23 +105,35 @@ public class HelpActivity extends AppCompatActivity {
                     switch (s) {
 
                         case "اکاؤنٹ بنائیں کا مسئلہ":
-                            startActivity(new Intent(HelpActivity.this, Registration.class));
+                            Intent inten = new Intent(HelpActivity.this, Registration.class);
+                            inten.putExtra("language",lang);
+                            startActivity(inten);
                             break;
                         case "لاگ ان کا مسئلہ":
-                            startActivity(new Intent(HelpActivity.this, LogIn.class));
+                            Intent intent = new Intent(HelpActivity.this, LogIn.class);
+                            intent.putExtra("language",lang);
+                            startActivity(intent);
                             break;
                         case "قریب ترین دودھ کا آدمی نہیں مل رہا ہے":
-                            startActivity(new Intent(HelpActivity.this, CantFindNearestMilkMan.class));
+                            Intent intent2 = new Intent(HelpActivity.this, CantFindNearestMilkMan.class);
+                            intent2.putExtra("language",lang);
+                            startActivity(intent2);
                             break;
                         case "چیٹ باکس کام نہیں کررہا ہے":
-                            startActivity(new Intent(HelpActivity.this, ChatBoxNotWorking.class));
+                            Intent intent3 = new Intent(HelpActivity.this, ChatBoxNotWorking.class);
+                            intent3.putExtra("language",lang);
+                            startActivity(intent3);
                             break;
                         case "جائزہ دینے میں دشواری کا سامنا ہے":
-                            startActivity(new Intent(HelpActivity.this, GivigReview.class));
+                            Intent intent4 = new Intent(HelpActivity.this, GivigReview.class);
+                            intent4.putExtra("language",lang);
+                            startActivity(intent4);
                             break;
 
                         case "بکنگ آرڈر میں دشواری":
-                            startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
+                            Intent intent5 = new Intent(HelpActivity.this, PlacingOrder.class);
+                            intent5.putExtra("language",lang);
+                            startActivity(intent5);
                             break;
 
 
