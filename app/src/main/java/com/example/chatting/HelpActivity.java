@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
-    String[] problems={"Create My Account","Log In","Nearest Milk Man","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Seletion","Update Information"};
+    String[] problems={"Create My Account","Log In","Nearest Milk Man","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Selection","Update Information"};
     String[] problemsu={"اکاؤنٹ بنائیں کا مسئلہ","لاگ ان کا مسئلہ","قریب ترین دودھ کا آدمی نہیں مل رہا ہے","چیٹ باکس کام نہیں کررہا ہے","جائزہ دینے میں دشواری کا سامنا ہے", "بکنگ آرڈر میں دشواری","خریداروں کی تاریخ کو دیکھنے کے قابل نہیں ہوں","رائڈر کے انتخاب میں دشواری کا سامنا ہے","معلومات کی تازہ کاری میں مسئلہ"};
     Context context;
     Resources resources;
