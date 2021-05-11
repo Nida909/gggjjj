@@ -120,6 +120,7 @@ public class MainActivity2 extends AppCompatActivity {
             case R.id.Help:
 
                 Intent inten = new Intent(MainActivity2.this, HelpActivity.class);
+                inten.putExtra("language",str);
                 //inten.putExtra("var", str);
                 startActivity(inten);
                 return true;
