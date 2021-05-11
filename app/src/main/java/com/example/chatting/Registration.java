@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.icu.text.CaseMap;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +34,7 @@ public class Registration extends AppCompatActivity {
             resources = context.getResources();
             head.setText("عام سوالات");
             reg1.setText("ایپ میرا پاس ورڈ نہیں لے رہی ہے");
-            reg1.setText("میں اپنا اکاؤنٹ بنانے کے قابل نہیں ہوں");
+            reg2.setText("میں اپنا اکاؤنٹ بنانے کے قابل نہیں ہوں");
 
             reg1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -40,7 +42,7 @@ public class Registration extends AppCompatActivity {
 
 
                     AlertDialog.Builder alert = new AlertDialog.Builder(Registration.this);
-                    alert.setTitle("آپ کے سوال کا جواب");
+                    alert.setTitle("آپ کے سوال کا جواب       ");
                     alert.setMessage("پاس ورڈ کمزور نہیں ہونا چاہئے ، اس میں 1 بڑے حرف ، 1 چھوٹے کا حرف ، 1 ہندسہ اور 1 خصوصی حرف ہونا ضروری ہے");
                     alert.setPositiveButton("ٹھیک ہے", null);
                     alert.show();
