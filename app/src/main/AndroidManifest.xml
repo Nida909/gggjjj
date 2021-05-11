@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatting"
         android:usesCleartextTraffic="true">
-        <activity android:name=".milkinfoupdate"></activity>
+        <activity android:name=".riderselection"></activity>
+        <activity android:name=".milkinfoupdate" />
         <activity android:name=".PlacingOrder" />
         <activity android:name=".GivigReview" />
         <activity android:name=".Registration" />

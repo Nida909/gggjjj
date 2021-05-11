@@ -18,8 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
-    String[] problems={"Create My Account","Log In","Nearest Milk Man","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Selection","Update Information"};
-    String[] problemsu={"اکاؤنٹ بنائیں کا مسئلہ","لاگ ان کا مسئلہ","قریب ترین دودھ کا آدمی نہیں مل رہا ہے","چیٹ باکس کام نہیں کررہا ہے","جائزہ دینے میں دشواری کا سامنا ہے", "بکنگ آرڈر میں دشواری","خریداروں کی تاریخ کو دیکھنے کے قابل نہیں ہوں","رائڈر کے انتخاب میں دشواری کا سامنا ہے","معلومات کی تازہ کاری میں مسئلہ"};
+    String[] problems={"Create My Account","Log In","Nearest Milk Man","Chat Box Is Not Working","Giving Review", "Placing Order","Rider Selection","Update Information"};
+    String[] problemsu={"اکاؤنٹ بنائیں کا مسئلہ","لاگ ان کا مسئلہ","قریب ترین دودھ کا آدمی نہیں مل رہا ہے","چیٹ باکس کام نہیں کررہا ہے","جائزہ دینے میں دشواری کا سامنا ہے", "بکنگ آرڈر میں دشواری","رائڈر کے انتخاب میں دشواری کا سامنا ہے","معلومات کی تازہ کاری میں مسئلہ"};
     Context context;
     Resources resources;
     String languages,lang;
@@ -99,6 +99,13 @@ public class HelpActivity extends AppCompatActivity {
                             startActivity(intenttt);
                             break;
 
+                        case "Rider Selection":
+                            Intent in = new Intent(HelpActivity.this, riderselection.class);
+                            lang="ENGLISH";
+                            in.putExtra("language",lang);
+                            startActivity(in);
+                            break;
+
 
                     }
 
@@ -172,6 +179,13 @@ question.setHint("یہاں تلاش کریں");
                             lang="اردو";
                             intenttt.putExtra("language",lang);
                             startActivity(intenttt);
+                            break;
+
+                        case "رائڈر کے انتخاب میں دشواری کا سامنا ہے":
+                            Intent in = new Intent(HelpActivity.this, riderselection.class);
+                            lang="ENGLISH";
+                            in.putExtra("language",lang);
+                            startActivity(in);
                             break;
 
 
