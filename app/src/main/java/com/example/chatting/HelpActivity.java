@@ -54,7 +54,8 @@ public class HelpActivity extends AppCompatActivity {
                         break;
 
                     case "Update Milk Information":
-                        startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
+                        Intent myIntent = new Intent(HelpActivity.this, MilkInfoIsNotUploading.class);
+                        HelpActivity.this.startActivity(myIntent);
                         break;
                 }
 
