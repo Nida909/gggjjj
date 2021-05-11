@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
-    String[] months={"Create My Account","Log In","Nearest Milk Man","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Seletion","Update Information"};
+    String[] months={"Create My Account","Log In","Nearest Milk Man","Update Information","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Seletion"};
     ImageButton img;
     EditText question;
     ArrayList<String> user=new ArrayList<>();
@@ -52,13 +52,12 @@ public class HelpActivity extends AppCompatActivity {
                         break;
 
                     case "Placing Order":
-                        startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
+                        startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
                         break;
 
                     case "Update Information":
-                        startActivity(new Intent(HelpActivity.this, CreateMAccount.class));
-                        break;
-
+                        /*startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
+                        break;*/
                 }
 
 
