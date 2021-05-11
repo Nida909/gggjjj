@@ -32,6 +32,8 @@ public class Registration extends AppCompatActivity {
 
         if(languages.equals("ENGLISH"))
         {
+            context = LocalHelper.setLocale(Registration.this, "en");
+            resources = context.getResources();
             reg1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
