@@ -52,12 +52,11 @@ public class HelpActivity extends AppCompatActivity {
                         break;
 
                     case "Placing Order":
-                        startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
+                        startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
                         break;
 
                     case "Update Information":
-                        /*startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
-                        break;*/
+                        Toast.makeText(HelpActivity.this, "workding", Toast.LENGTH_SHORT).show();
                 }
 
 
