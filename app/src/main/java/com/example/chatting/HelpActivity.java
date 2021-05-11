@@ -167,6 +167,13 @@ question.setHint("یہاں تلاش کریں");
                             startActivity(intent5);
                             break;
 
+                        case "معلومات کی تازہ کاری میں مسئلہ":
+                            Intent intenttt = new Intent(HelpActivity.this, milkinfoupdate.class);
+                            lang="اردو";
+                            intenttt.putExtra("language",lang);
+                            startActivity(intenttt);
+                            break;
+
 
                     }
 
