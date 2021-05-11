@@ -183,7 +183,7 @@ question.setHint("یہاں تلاش کریں");
 
                         case "رائڈر کے انتخاب میں دشواری کا سامنا ہے":
                             Intent in = new Intent(HelpActivity.this, riderselection.class);
-                            lang="ENGLISH";
+                            lang="اردو";
                             in.putExtra("language",lang);
                             startActivity(in);
                             break;
