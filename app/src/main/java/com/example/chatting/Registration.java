@@ -24,6 +24,8 @@ public class Registration extends AppCompatActivity {
         reg1=findViewById(R.id.reg1);
         reg2=findViewById(R.id.reg2);
         head=findViewById(R.id.head);
+        Intent intent = getIntent();
+        languages= intent.getExtras().getString("language");
         if(languages.equals("اردو")) {
 
             context = LocalHelper.setLocale(Registration.this, "an");
