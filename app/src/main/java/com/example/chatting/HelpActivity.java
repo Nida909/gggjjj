@@ -92,6 +92,13 @@ public class HelpActivity extends AppCompatActivity {
                             startActivity(intentt);
                             break;
 
+                        case "Update Information":
+                            Intent intenttt = new Intent(HelpActivity.this, milkinfoupdate.class);
+                            lang="ENGLISH";
+                            intenttt.putExtra("language",lang);
+                            startActivity(intenttt);
+                            break;
+
 
                     }
 
