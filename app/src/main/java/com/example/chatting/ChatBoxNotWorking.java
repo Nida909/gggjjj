@@ -89,7 +89,7 @@ public class ChatBoxNotWorking extends AppCompatActivity {
 
                     AlertDialog.Builder alert = new AlertDialog.Builder(ChatBoxNotWorking.this);
                     alert.setTitle("آپ کے سوال کا جواب");
-                    alert.setMessage("س بات کو یقینی بنائیں کہ آپ انٹرنیٹ سے جڑے ہوئے ہیں ، ورنہ آپ کو او ٹی پی نہیں ملے گا");
+                    alert.setMessage("اس بات کو یقینی بنائیں کہ آپ انٹرنیٹ سے جڑے ہوئے ہیں ، ورنہ آپ کو او ٹی پی نہیں ملے گا");
                     alert.setPositiveButton("\"ٹھیک ہے", null);
                     alert.show();
 
