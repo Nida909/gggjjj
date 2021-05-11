@@ -8,13 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
-    String[] months={"Create My Account","Log In","Nearest Milk Man","Update Milk Information","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Seletion"};
+    String[] months={"Create My Account","Log In","Nearest Milk Man","Update Information","Chat Box Is Not Working","Giving Review", "Placing Order","Customer History","Rider Seletion"};
     ImageButton img;
     EditText question;
     ArrayList<String> user=new ArrayList<>();
@@ -47,16 +48,18 @@ public class HelpActivity extends AppCompatActivity {
                         startActivity(new Intent(HelpActivity.this, ChatBoxNotWorking.class));
                         break;
                     case "Giving Review":
-                        startActivity(new Intent(HelpActivity.this, GivigReview.class));
-                        break;
+                        /*startActivity(new Intent(HelpActivity.this, GivigReview.class));
+                        break;*/
+                        Toast.makeText(HelpActivity.this, "working", Toast.LENGTH_SHORT).show();
                     case "Placing Order":
-                        startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
-                        break;
+                        /*startActivity(new Intent(HelpActivity.this, PlacingOrder.class));
+                        break;*/
+                        Toast.makeText(HelpActivity.this, "working", Toast.LENGTH_SHORT).show();
 
-                    case "Update Milk Information":
-                        Intent myIntent = new Intent(HelpActivity.this, MilkInfoIsNotUploading.class);
-                        HelpActivity.this.startActivity(myIntent);
-                        break;
+                    case "Update Information":
+                        /*startActivity(new Intent(HelpActivity.this, MilkInfoIsNotUploading.class));
+                        break;*/
+                        Toast.makeText(HelpActivity.this, "working", Toast.LENGTH_SHORT).show();
                 }
 
 
