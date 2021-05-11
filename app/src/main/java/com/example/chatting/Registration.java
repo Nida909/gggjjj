@@ -67,7 +67,7 @@ public class Registration extends AppCompatActivity {
             lang="اردو";
 
         }
-        if(languages.equals("ENGLISH"))
+        else
         {
             reg1.setOnClickListener(new View.OnClickListener() {
                 @Override
