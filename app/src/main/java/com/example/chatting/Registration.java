@@ -17,7 +17,7 @@ public class Registration extends AppCompatActivity {
     TextView reg1,reg2,head;
     Context context;
     Resources resources;
-    String languages,lang;
+    String lang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class Registration extends AppCompatActivity {
         head=findViewById(R.id.head);
 
         Intent intent = getIntent();
-        languages= intent.getExtras().getString("language");
+       String languages= intent.getExtras().getString("language");
         if(languages.equals("ENGLISH"))
         {
             context = LocalHelper.setLocale(Registration.this, "en");
