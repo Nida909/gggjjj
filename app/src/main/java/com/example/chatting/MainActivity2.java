@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity2 extends AppCompatActivity {
-    Button milkman,customer,owner,rider;
+    Button milkman,customer,rider;
     TextView txt1,txt2;
     Context context;
     Resources resources;
@@ -29,7 +29,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         milkman=findViewById(R.id.milkman);
         customer=findViewById(R.id.customer);
-        owner=findViewById(R.id.owner);
+       // owner=findViewById(R.id.owner);
         rider=findViewById(R.id.rider);
         txt1=findViewById(R.id.txt1);
         txt2=findViewById(R.id.txt2);
@@ -48,7 +48,7 @@ public class MainActivity2 extends AppCompatActivity {
             milkman.setText(resources.getString(R.string.milkman));
             customer.setText(resources.getString(R.string.customer));
             rider.setText(resources.getString(R.string.rider));
-            owner.setText(resources.getString(R.string.owner));
+
 
 
             str="ENGLISH";
@@ -67,7 +67,7 @@ public class MainActivity2 extends AppCompatActivity {
             milkman.setText(resources.getString(R.string.milkman));
             customer.setText(resources.getString(R.string.customer));
             rider.setText(resources.getString(R.string.rider));
-            owner.setText(resources.getString(R.string.owner));
+
 
             str="اردو";
 
@@ -98,14 +98,7 @@ public class MainActivity2 extends AppCompatActivity {
         intent.putExtra("Check",check);
         startActivity(intent);
     }
-    public void Onowner(View v)
-    {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
-        ref.child("last").setValue("last");
-        Intent intent = new Intent(MainActivity2.this, OwnerMain.class);
-        startActivity(intent);
-    }
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // super.onCreateOptionsMenu(menu);
@@ -123,6 +116,11 @@ public class MainActivity2 extends AppCompatActivity {
                 inten.putExtra("language",str);
                 //inten.putExtra("var", str);
                 startActivity(inten);
+                return true;
+            case R.id.Owner:
+
+                Intent intent = new Intent(MainActivity2.this, OwnerMain.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

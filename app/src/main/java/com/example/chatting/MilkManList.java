@@ -104,9 +104,20 @@ ImageButton img;
                                 Toast.makeText(MilkManList.this, "message222: " + edt.getText().toString(), Toast.LENGTH_LONG).show();
 
 
-                                MilkMan mObj = new MilkMan(s1, resources.getString(R.string.category) + s4 + " , "+resources.getString(R.string.loc) + s2, s3);
+                                //MilkMan mObj = new MilkMan(s1, resources.getString(R.string.category) + s4 + " , "+resources.getString(R.string.loc) + s2, s3);
 
-                                arrayList.add(mObj);
+                                //arrayList.add(mObj);
+                                if (languages.equals("ENGLISH")) {
+                                    MilkMan mObj = new MilkMan(s1, "Category :" + s4 + ", Loc :" + s2, s3);
+
+                                    arrayList.add(mObj);
+                                }
+                                else
+                                {
+                                    MilkMan mObj = new MilkMan(s1,   "قسم"+s4 +" , "+"جگہ"+s2, s3);
+
+                                    arrayList.add(mObj);
+                                }
 
 
                             }

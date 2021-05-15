@@ -164,6 +164,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                distn.setText("Distance to DropOff is "+distance+"Km");
                     polyline2=map.addPolyline(pp);
                 }
+                else
+                {
+                    Toast.makeText(MapsActivity.this,"Please enter your Drop off location",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -237,49 +241,53 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void Continue(View v)
     {
+if(location==null) {
+    Toast.makeText(MapsActivity.this,"Please enter your Drop off location",Toast.LENGTH_SHORT).show();
+}
+else
+{
+    counter = counter + 1;
+    count = String.valueOf(counter);
+    ref.child("check").setValue(b);
+    db = dbHelper.getReadableDatabase();
+    String[] colm = {DatabaseContract.Customers.COL_NAME, DatabaseContract.Customers.COL_CONTACT};
+    Cursor c = db.query(DatabaseContract.Customers.TABLE_NAME, colm, DatabaseContract.Customers._ID + "=?", new String[]{customer}
+            , null, null, null, null);
+    if (c.getCount() == 0) {
+        Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
+    }
+    c.moveToFirst();
+    String s1 = c.getString(0);
+    String s2 = c.getString(1);
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reff = database.getReference();
 
 
-        counter=counter+1;
-        count=String.valueOf(counter);
-ref.child("check").setValue(b);
-        db = dbHelper.getReadableDatabase();
-        String[] colm={DatabaseContract.Customers.COL_NAME,DatabaseContract.Customers.COL_CONTACT};
-        Cursor c = db.query(DatabaseContract.Customers.TABLE_NAME,colm, DatabaseContract.Customers._ID + "=?", new String[] {customer}
-                , null, null, null, null);
-        if (c.getCount()==0) {
-            Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+    Map<String, Object> data = new HashMap<>();
+    data.put("ID", count);
+    data.put("MilkmanLoc", milkmanLoc);
+    data.put("DropOffLoc", str);
+    data.put("CustomerName", s1);
+    data.put("CustomerContact", s2);
+    data.put("Cancel", "Unknown");
+    data.put("GivenRide", "No");
+    //data.put("Cancel","Unknown");
+    reff.child("Orderlocation").child(count).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+        @Override
+        public void onSuccess(Void aVoid) {
+            //
+            Log.i("tag", "Location update saved");
+            Intent intn = new Intent(MapsActivity.this, OrderPage.class);
+            intn.putExtra("milkman", milkman);
+            intn.putExtra("customer", customer);
+            intn.putExtra("Distance", distance);
+            intn.putExtra("PickUp", milkmanLoc);
+            intn.putExtra("DropOff", str);
+            intn.putExtra("language", lang);
+            intn.putExtra("Count", String.valueOf(counter));
+            startActivity(intn);
         }
-        c.moveToFirst();
-       String s1=c.getString(0);
-        String s2=c.getString(1);
-       FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference reff = database.getReference();
-
-
-        Map<String, Object> data = new HashMap<>();
-        data.put("ID",count);
-        data.put("MilkmanLoc", milkmanLoc);
-        data.put("DropOffLoc", str);
-        data.put("CustomerName",s1);
-        data.put("CustomerContact",s2);
-        data.put("Cancel","Unknown");
-        data.put("GivenRide","No");
-        //data.put("Cancel","Unknown");
-        reff.child("Orderlocation").child(count).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                //
-                Log.i("tag", "Location update saved");
-                Intent intn=new Intent(MapsActivity.this,OrderPage.class);
-                intn.putExtra("milkman",milkman);
-                intn.putExtra("customer",customer);
-                intn.putExtra("Distance",distance );
-                intn.putExtra("PickUp",milkmanLoc);
-                intn.putExtra("DropOff",str);
-                intn.putExtra("language",lang);
-                intn.putExtra("Count", String.valueOf(counter));
-                startActivity(intn);
-            }
-        });
+    });
+}
     }
 }
