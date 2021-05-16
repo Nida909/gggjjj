@@ -99,7 +99,7 @@ if(str.equals(num)) {
                     intentt.putExtra("DropOff",dropoff);
                     intentt.putExtra("milkmanId",milkmanId);
                     intentt.putExtra("customerId",cID);
-                    intentt.putExtra("Count",Count);
+                    intentt.putExtra("Count",String.valueOf(Count));
                     startActivity(intentt);
                     Toast.makeText(getApplicationContext(),"You Selected "+customer.get(position).getName()+ " as Country", Toast.LENGTH_LONG).show();        }
             });
